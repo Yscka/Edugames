@@ -1,6 +1,6 @@
 <?php
 
-namespace EG\ClasseBundle\Tests\Controller;
+namespace EG\ClassBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

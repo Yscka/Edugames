@@ -1,3 +1,0 @@
-eg_classe_homepage:
-    path:     /
-    defaults: { _controller: EGClasseBundle:Default:index }

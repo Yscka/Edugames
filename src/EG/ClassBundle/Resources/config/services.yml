@@ -1,4 +1,4 @@
 services:
-#    eg_classe.example:
-#        class: EG\ClasseBundle\Example
+#    eg_class.example:
+#        class: EG\ClassBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
