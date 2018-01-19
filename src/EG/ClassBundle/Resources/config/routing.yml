@@ -1,3 +1,10 @@
 eg_class_homepage:
     path:     /
     defaults: { _controller: EGClassBundle:Class:index }
+
+eg_class_view:
+    path:     /view/{id}
+    defaults:
+        _controller: EGClassBundle:Class:view
+    requirements:
+        id: \d+

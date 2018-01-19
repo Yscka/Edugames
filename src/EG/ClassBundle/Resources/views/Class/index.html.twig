@@ -5,12 +5,16 @@
 {% endblock %}
 
 {% block egBody %}
-    <a href="#"><div>
-            <p>Classe 1</p>
-        </div></a>
-    <a href="#">
-        <div>
-            <p>Nouvelle classe</p>
+    {% for class in listClass %}
+        <div class="well col-lg-1 col-lg-offset-1">
+            <a href="{{ path('eg_class_view', {id : class.id}) }}">
+                    <p>{{ class.name }} <span class="glyphicon glyphicon-wrench" ></span></p>
+             </a>
         </div>
-    </a>
+        {% endfor %}
+    <div class="well col-lg-1 col-lg-offset-1">
+        <a href="#">
+            <p>Nouvelle classe<span class="glyphicon glyphicon-plus" ></span></p>
+        </a>
+    </div>
 {% endblock %}

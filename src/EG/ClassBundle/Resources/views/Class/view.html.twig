@@ -1,0 +1,15 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}
+    Liste eleve - {{ parent() }}
+{% endblock %}
+
+{% block egBody %}
+<div class="row">
+        {% for Pupil in listPupil %}
+            <div class="well col-lg-1 col-lg-offset-1">{{ Pupil.name }} {{ Pupil.lastname }}</div>
+        {% endfor %}
+
+<a href="{{ path('eg_class_homepage') }}" class="btn btn-default">Retour</a></div>
+
+{% endblock %}
