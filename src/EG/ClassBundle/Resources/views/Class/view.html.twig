@@ -6,9 +6,16 @@
 
 {% block egBody %}
 <div class="row">
+    <ul>
         {% for Pupil in listPupil %}
-            <div class="well col-lg-1 col-lg-offset-1">{{ Pupil.name }} {{ Pupil.lastname }}</div>
+           <li class="well col-lg-2 col-lg-offset-1">
+                    <p>nom : {{ Pupil.lastname }}</p>
+                    <p>prenom : {{ Pupil.name }}</p>
+                    <p>Date de naissance : {{ Pupil.birthdate|date('d/m/Y')  }}</p>
+               </li>
         {% endfor %}
+    </ul>
+
 
 <a href="{{ path('eg_class_homepage') }}" class="btn btn-default">Retour</a></div>
 
