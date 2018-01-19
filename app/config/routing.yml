@@ -1,0 +1,5 @@
+eg_classe:
+    resource: "@EGClasseBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
