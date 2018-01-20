@@ -1,0 +1,12 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}
+    Nouvelle Classe - {{ parent() }}
+{% endblock %}
+
+{% block egBody %}
+
+    {{ include("EGClassBundle:Class:formClass.html.twig") }}
+
+    <a href="{{ path('eg_class_homepage') }}" class="btn btn-default">Retour</a></div>
+{% endblock %}

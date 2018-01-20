@@ -8,3 +8,8 @@ eg_class_view:
         _controller: EGClassBundle:Class:view
     requirements:
         id: \d+
+
+eg_class_add:
+    path:    /add
+    defaults:
+        _controller: EGClassBundle:Class:add
