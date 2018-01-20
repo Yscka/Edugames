@@ -8,14 +8,14 @@
     {# Génération manuelle et éclatée : #}
     <div class="form-group">
         {# Génération du label. #}
-        {{ form_label(form.name, "Nom de la classe", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+        {{ form_label(form.classroomName, "Nom de la classe", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
 
         {# Affichage des erreurs pour ce champ précis. #}
-        {{ form_errors(form.name) }}
+        {{ form_errors(form.classroomName) }}
 
         <div class="col-sm-10">
             {# Génération de l'input. #}
-            {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+            {{ form_widget(form.classroomName, {'attr': {'class': 'form-control'}}) }}
         </div>
     </div>
 

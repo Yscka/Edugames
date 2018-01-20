@@ -3,6 +3,7 @@
 namespace EG\ClassBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use EG\ClassBundle\Entity\ClassRoom;
 
 /**
  * Pupil
@@ -42,8 +43,8 @@ class Pupil
      */
 
     /**
-     * @ORM\ManyToOne(targetEntity="EG\ClassBundle\Entity\ClassRoom")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="EG\ClassBundle\Entity\ClassRoom", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true)
      */
     private $classroom;
 
@@ -122,5 +123,29 @@ class Pupil
     public function getBirthdate()
     {
         return $this->birthdate;
+    }
+
+    /**
+     * Set classroom.
+     *
+     * @param ClassRoom $classroom
+     *
+     * @return Pupil
+     */
+    public function setClassroom(ClassRoom $classroom)
+    {
+        $this->classroom = $classroom;
+
+        return $this;
+    }
+
+    /**
+     * Get classroom.
+     *
+     * @return ClassRoom
+     */
+    public function getClassroom()
+    {
+        return $this->classroom;
     }
 }

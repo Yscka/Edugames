@@ -24,9 +24,9 @@ class ClassRoom
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255, unique=true)
+     * @ORM\Column(name="classroomName", type="string", length=255, unique=true)
      */
-    private $name;
+    private $classroomName;
 
 
     /**
@@ -39,27 +39,6 @@ class ClassRoom
         return $this->id;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return ClassRoom
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
 
-        return $this;
-    }
 
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
 }
