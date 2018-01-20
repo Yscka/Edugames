@@ -1,0 +1,12 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}
+    Nouvelle Classe - {{ parent() }}
+{% endblock %}
+
+{% block egBody %}
+    <h2 class="text-center">Ajout d'un éléve dans la classe  {{ class.classroomName }}</h2>
+    {{ form(form) }}
+
+    <a href="{{ path('eg_class_view', {id: class.id}) }}" class="btn btn-default" ><span class="glyphicon glyphicon-chevron-left"></span> Retour</a></div>
+{% endblock %}

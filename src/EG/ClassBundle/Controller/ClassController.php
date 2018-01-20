@@ -77,13 +77,18 @@ class ClassController extends Controller
     public function deleteAction($id, Request $request){
         $em = $this->getDoctrine()->getManager();
         $classRoom = $em->getRepository('EGClassBundle:ClassRoom')->find($id);
-
+        $listPupil = $em->getRepository('EGClassBundle:Pupil')->findBy(array(
+            'classroom' => $classRoom
+        ));
         if (null === $classRoom) {
             throw new NotFoundHttpException("La classe n'existe pas.");
         }
 
         $form = $this->get('form.factory')->create();
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+            foreach ($listPupil as $pupil){
+                $em->remove($pupil);
+            }
             $em->remove($classRoom);
             $em->flush();
             $request->getSession()->getFlashBag()->add('Info', 'Classe Supprimer.');
@@ -91,6 +96,35 @@ class ClassController extends Controller
         }
 
         return $this->render('EGClassBundle:Class:delete.html.twig', array(
+            'class' => $classRoom,
+            'form' => $form->createView()
+        ));
+    }
+
+    public function deleteAllAction($id, Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $classRoom = $em->getRepository('EGClassBundle:ClassRoom')->find($id);
+        $listPupil = $em->getRepository('EGClassBundle:Pupil')->findBy(array(
+            'classroom' => $classRoom
+        ));
+
+        if (null === $classRoom) {
+            throw new NotFoundHttpException("La classe n'existe pas.");
+        }
+
+        $form = $this->get('form.factory')->create();
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+            foreach ($listPupil as $pupil) {
+                $em->remove($pupil);
+            }
+            $em->flush();
+            $request->getSession()->getFlashBag()->add('Info', 'Classe Supprimer.');
+            return $this->redirectToRoute('eg_class_view', array(
+                'id' => $id
+            ));
+        }
+
+        return $this->render('EGClassBundle:Class:deleteAll.html.twig', array(
             'class' => $classRoom,
             'form' => $form->createView()
         ));

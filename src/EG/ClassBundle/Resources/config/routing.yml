@@ -27,3 +27,23 @@ eg_class_delete:
         _controller: EGClassBundle:Class:delete
     requirements:
         id: \d+
+
+eg_class_delete_all:
+    path:     /delete-all/{id}
+    defaults:
+        _controller: EGClassBundle:Class:deleteAll
+    requirements:
+        id: \d+
+
+eg_pupil_add:
+    path:    /pupil/add/{id}
+    defaults:
+        _controller: EGClassBundle:Pupil:add
+    requirements:
+            id: \d+
+eg_pupil_delete:
+    path:    /pupil/delete/{id}
+    defaults:
+        _controller: EGClassBundle:Pupil:delete
+    requirements:
+            id: \d+

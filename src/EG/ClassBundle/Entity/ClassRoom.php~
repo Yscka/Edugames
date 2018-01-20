@@ -28,7 +28,10 @@ class ClassRoom
      */
     private $classroomName;
 
-
+    /**
+     * @ORM\OneToMany(targetEntity="EG\ClassBundle\Entity\pupil", mappedBy="classroom")
+     */
+    private $pupil;
     /**
      * Get id
      *
@@ -40,5 +43,27 @@ class ClassRoom
     }
 
 
+    /**
+     * Set classroomName.
+     *
+     * @param string $classroomName
+     *
+     * @return ClassRoom
+     */
+    public function setClassroomName($classroomName)
+    {
+        $this->classroomName = $classroomName;
 
+        return $this;
+    }
+
+    /**
+     * Get classroomName.
+     *
+     * @return string
+     */
+    public function getClassroomName()
+    {
+        return $this->classroomName;
+    }
 }
