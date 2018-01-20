@@ -1,0 +1,3 @@
+eg_core_homepage:
+    path:     /
+    defaults: { _controller: EGCoreBundle:Default:index }

@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0610c62e-0073-454c-9890-0d1de30385af" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change beforePath="$PROJECT_DIR$/src/EG/ClassBundle/Entity/ClassRoom.php" afterPath="$PROJECT_DIR$/src/EG/ClassBundle/Entity/ClassRoom.php" />
-      <change beforePath="$PROJECT_DIR$/src/EG/ClassBundle/Form/ClassRoomType.php" afterPath="$PROJECT_DIR$/src/EG/ClassBundle/Form/ClassRoomType.php" />
-      <change beforePath="$PROJECT_DIR$/src/EG/ClassBundle/Resources/views/Class/formClass.html.twig" afterPath="$PROJECT_DIR$/src/EG/ClassBundle/Resources/views/Class/formClass.html.twig" />
-      <change beforePath="$PROJECT_DIR$/src/EG/ClassBundle/Resources/views/Class/index.html.twig" afterPath="$PROJECT_DIR$/src/EG/ClassBundle/Resources/views/Class/index.html.twig" />
-      <change beforePath="$PROJECT_DIR$/var/sessions/dev/sess_935180435f6eb95d30fcde6ee3e6ec35" afterPath="$PROJECT_DIR$/var/sessions/dev/sess_935180435f6eb95d30fcde6ee3e6ec35" />
+      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
+      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -82,8 +78,8 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1516467329291" expanded="true" signature="0:4" ph="eg_core: &lt;2 keys&gt;" />
-                <marker date="1516467329291" expanded="true" signature="4:90" ph="eg_class: &lt;2 keys&gt;" />
+                <marker date="1516467688472" expanded="true" signature="0:89" ph="eg_core: &lt;2 keys&gt;" />
+                <marker date="1516467688472" expanded="true" signature="4:175" ph="eg_class: &lt;2 keys&gt;" />
               </folding>
             </state>
           </provider>
@@ -417,7 +413,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28572000" />
+    <option name="totallyTimeSpent" value="28689000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -430,7 +426,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22518677" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -440,7 +435,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18688525" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18688525" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -611,8 +606,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1516467329291" expanded="true" signature="0:4" ph="eg_core: &lt;2 keys&gt;" />
-            <marker date="1516467329291" expanded="true" signature="4:90" ph="eg_class: &lt;2 keys&gt;" />
+            <marker date="1516467688472" expanded="true" signature="0:89" ph="eg_core: &lt;2 keys&gt;" />
+            <marker date="1516467688472" expanded="true" signature="4:175" ph="eg_class: &lt;2 keys&gt;" />
           </folding>
         </state>
       </provider>
