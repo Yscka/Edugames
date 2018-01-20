@@ -18,7 +18,7 @@ composer install
 ou
 php bin/composer install
 
-4. Créez la base de données
+Etape 4. Créez la base de données
 Si la base de données inscrite dans le fichier parameters.yml n'existe pas: 
 
 php bin/console doctrine:database:create
@@ -32,7 +32,7 @@ Pour ajoutez les fixtures :
 
 php bin/console doctrine:fixtures:load
 
-5. Publiez les assets
+Etape 5. Publiez les assets
 
 Installer les assets dans web/ :
 

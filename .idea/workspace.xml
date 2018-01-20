@@ -4,8 +4,6 @@
     <list default="true" id="0610c62e-0073-454c-9890-0d1de30385af" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/src/EG/ClassBundle/Resources/views/Class/view.html.twig" afterPath="$PROJECT_DIR$/src/EG/ClassBundle/Resources/views/Class/view.html.twig" />
-      <change beforePath="$PROJECT_DIR$/var/sessions/dev/sess_935180435f6eb95d30fcde6ee3e6ec35" afterPath="$PROJECT_DIR$/var/sessions/dev/sess_935180435f6eb95d30fcde6ee3e6ec35" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -105,8 +103,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="577">
-                <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <first_editor relative-caret-position="266">
+                <caret line="34" column="6" lean-forward="false" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -338,12 +336,12 @@
       <option name="presentableId" value="Default" />
       <updated>1516364734686</updated>
       <workItem from="1516364736012" duration="20911000" />
-      <workItem from="1516432222385" duration="587000" />
+      <workItem from="1516432222385" duration="701000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21498000" />
+    <option name="totallyTimeSpent" value="21612000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -700,8 +698,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="577">
-            <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <first_editor relative-caret-position="266">
+            <caret line="34" column="6" lean-forward="false" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
             <folding />
           </first_editor>
           <second_editor />
