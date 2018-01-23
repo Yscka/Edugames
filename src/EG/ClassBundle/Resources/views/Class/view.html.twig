@@ -15,7 +15,7 @@
                             <p>{{ pupil.lastname }}
                                 {{ pupil.name }}</p>
                             <p>{{ pupil.birthdate|date('d/m/Y')  }}</p>
-                            <a href="#" class="btn btn-primary">Editer l'éléve</span></a>
+                            <a href="#" class="btn btn-primary">Editer l'éléve</a>
                             <a href="{{ path('eg_pupil_delete', {id: pupil.id}) }}" class="btn btn-danger">Supprimer l'éléve <span class="glyphicon glyphicon-trash" ></span></a>
                         </li>
                     </div>
