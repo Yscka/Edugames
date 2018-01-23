@@ -3,7 +3,7 @@
     <div>
         <ul>
             {% for class in listClass %}
-                <li><a href="#">{{ class.classroomName }}</a> </li>
+                <li><a href="{{ path('eg_view_class_view', {'id' : class.id }) }}">{{ class.classroomName }}</a> </li>
             {% endfor %}
         </ul>
     </div>

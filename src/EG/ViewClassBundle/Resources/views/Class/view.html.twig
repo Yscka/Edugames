@@ -1,0 +1,11 @@
+{% extends 'EGViewClassBundle::layout.html.twig' %}
+
+{%  block egBody %}
+    <div>
+        <ul>
+            {% for pupil in listPupil %}
+            <li> {{ pupil.name }}</li>
+            {%  endfor %}
+        </ul>
+    </div>
+{% endblock %}

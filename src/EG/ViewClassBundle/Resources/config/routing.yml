@@ -2,3 +2,9 @@
 #    path:     /
 #    defaults: { _controller: EGViewClassBundle:ViewClass:index }
 
+eg_view_class_view:
+    path:     /view/{id}
+    defaults:
+        _controller: EGViewClassBundle:ViewClass:view
+    requirements:
+        id: \d+
