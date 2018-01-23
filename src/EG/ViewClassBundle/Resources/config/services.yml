@@ -1,0 +1,4 @@
+services:
+#    eg_view_class.example:
+#        class: EG\ViewClassBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

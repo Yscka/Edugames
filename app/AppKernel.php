@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new EG\ClassBundle\EGClassBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new EG\CoreBundle\EGCoreBundle(),
+            new EG\ViewClassBundle\EGViewClassBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

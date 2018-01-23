@@ -1,0 +1,4 @@
+#eg_view_class_homepage:
+#    path:     /
+#    defaults: { _controller: EGViewClassBundle:ViewClass:index }
+

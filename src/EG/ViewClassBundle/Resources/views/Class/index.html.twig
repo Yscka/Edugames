@@ -1,0 +1,10 @@
+
+{%  block list %}
+    <div>
+        <ul>
+            {% for class in listClass %}
+                <li><a href="#">{{ class.classroomName }}</a> </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

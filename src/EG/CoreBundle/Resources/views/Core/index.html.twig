@@ -1,1 +1,5 @@
 {% extends "EGCoreBundle::layout.html.twig" %}
+
+{% block egBody %}
+{{ render(controller('EGViewClassBundle:ViewClass:index'))  }}
+{% endblock %}
