@@ -9,6 +9,19 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body>
+<header>
+    <a href="{{ path("eg_core_homepage") }}">Edugames</a>
+    <div>
+    <a href="#"> Profil</a>
+        <ul>
+            <li><a href="{{ path("eg_class_homepage") }}">Gestion de la Classe</a></li>
+            <li><a href="#">Courbes de Progression</a></li>
+            <li><a href="#">Paramètres du Profil </a></li>
+        </ul>
+    </div>
+
+
+</header>
 {% block body %}
 
     {% block egBody %}

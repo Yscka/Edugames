@@ -17,6 +17,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new EG\ClassBundle\EGClassBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new EG\CoreBundle\EGCoreBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

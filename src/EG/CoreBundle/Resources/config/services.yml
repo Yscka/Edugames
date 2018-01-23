@@ -1,0 +1,4 @@
+services:
+#    eg_core.example:
+#        class: EG\CoreBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
