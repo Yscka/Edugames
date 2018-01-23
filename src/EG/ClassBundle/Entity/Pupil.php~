@@ -43,7 +43,7 @@ class Pupil
      */
 
     /**
-     * @ORM\ManyToOne(targetEntity="EG\ClassBundle\Entity\ClassRoom", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="EG\ClassBundle\Entity\ClassRoom", inversedBy="pupil" ,cascade={"persist"})
      * @ORM\JoinColumn(nullable=true)
      */
     private $classroom;

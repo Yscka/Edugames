@@ -1,0 +1,22 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}
+    Suppression {{ pupil.name }} {{ pupil.lastName }} - {{ parent() }}
+{% endblock %}
+
+{% block egBody %}
+    <div class="well text-center">
+        <p>Êtes-vous sur de vouloir supprimer l'éleve {{ pupil.name }} {{ pupil.lastName }}</p>
+
+        <form action="{{ path('eg_pupil_delete', {'id': pupil.id}) }}" method="post">
+            <a href="{{ path('eg_class_view', {id: class.id}) }}" class="btn btn-default">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                Annuler</a>
+
+
+            <input type="submit" value="Supprimer" class="btn btn-danger" />
+
+            {{ form_rest(form) }}
+        </form>
+    </div>
+{% endblock %}

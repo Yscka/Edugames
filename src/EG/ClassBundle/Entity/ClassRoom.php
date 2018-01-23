@@ -3,6 +3,7 @@
 namespace EG\ClassBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use EG\ClassBundle\Entity\pupil;
 
 /**
  * Class
@@ -28,7 +29,6 @@ class ClassRoom
      */
     private $classroomName;
 
-
     /**
      * Get id
      *
@@ -38,8 +38,6 @@ class ClassRoom
     {
         return $this->id;
     }
-
-
 
 
     /**
@@ -65,4 +63,8 @@ class ClassRoom
     {
         return $this->classroomName;
     }
+    /**
+     * Constructor
+     */
+
 }

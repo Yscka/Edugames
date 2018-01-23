@@ -1,20 +1,20 @@
 {% extends '::layout.html.twig' %}
 
 {% block title %}
-    Classe - {{ parent() }}
+   Mes Classes - {{ parent() }}
 {% endblock %}
 
 {% block egBody %}
     {% for class in listClass %}
         <div class="well col-lg-1 col-lg-offset-1">
             <a href="{{ path('eg_class_view', {id : class.id}) }}">
-                    <p>{{ class.classroomName }} <span class="glyphicon glyphicon-wrench" ></span></p>
+                    {{ class.classroomName }} <span class="glyphicon glyphicon-wrench" ></span>
              </a>
         </div>
         {% endfor %}
     <div class="well col-lg-1 col-lg-offset-1">
         <a href="{{ path('eg_class_add') }}">
-            <p>Nouvelle classe<span class="glyphicon glyphicon-plus" ></span></p>
+            Nouvelle classe<span class="glyphicon glyphicon-plus" ></span>
         </a>
     </div>
 {% endblock %}
