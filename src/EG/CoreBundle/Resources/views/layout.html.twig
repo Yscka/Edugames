@@ -10,18 +10,25 @@
 </head>
 <body>
 <header>
-    <a href="{{ path("eg_core_homepage") }}">Edugames</a>
-    <div>
-    <a href="#"> Profil</a>
-        <ul>
-            <li><a href="{{ path("eg_class_homepage") }}">Gestion de la Classe</a></li>
-            <li><a href="#">Courbes de Progression</a></li>
-            <li><a href="#">Paramètres du Profil </a></li>
-        </ul>
-    </div>
-
-
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                 <a href="{{ path("eg_core_homepage") }}">Edugames</a>
+            </div>
+                <div class="nav navbar-nav">
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Profil <span class="caret"> </span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path("eg_class_homepage") }}">Gestion de la Classe</a></li>
+                            <li><a href="#">Courbes de Progression</a></li>
+                            <li><a href="#">Paramètres du Profil </a></li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+    </nav>
 </header>
+
 {% block body %}
 
     {% block egBody %}
