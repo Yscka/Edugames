@@ -36,4 +36,5 @@
 # Composer PHAR
 /composer.phar
 
-.idea/*
+/.idea/*
+/.idea/workspace.xml
