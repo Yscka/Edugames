@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0610c62e-0073-454c-9890-0d1de30385af" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change beforePath="$PROJECT_DIR$/src/EG/CoreBundle/Controller/DefaultController.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/EG/CoreBundle/DependencyInjection/Configuration.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/EG/CoreBundle/DependencyInjection/EGCoreExtension.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/EG/CoreBundle/EGCoreBundle.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/EG/CoreBundle/Resources/config/routing.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/EG/CoreBundle/Resources/config/services.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/EG/CoreBundle/Resources/views/Default/index.html.twig" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/EG/CoreBundle/Tests/Controller/DefaultControllerTest.php" afterPath="" />
-    </list>
+    <list default="true" id="0610c62e-0073-454c-9890-0d1de30385af" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -282,7 +270,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28944000" />
+    <option name="totallyTimeSpent" value="28982000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
