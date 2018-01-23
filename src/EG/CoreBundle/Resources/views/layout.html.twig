@@ -5,35 +5,40 @@
     <title>{% block title %}Edugame{% endblock %}</title>
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+       <div class="container-fluid">
             <div class="navbar-header">
-                 <a href="{{ path("eg_core_homepage") }}">Edugames</a>
+                 <a class="navbar-brand" href="{{ path("eg_core_homepage") }}">Edugames</a>
             </div>
-                <div class="nav navbar-nav">
-                    <div class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Profil <span class="caret"> </span></a>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class=" glyphicon glyphicon-menu-hamburger"></span> </a>
+                        {#<a class="dropdown-toggle" data-toggle="dropdown" href="#"> Profil <span class="caret"> </span></a>#}
                         <ul class="dropdown-menu">
-                            <li><a href="{{ path("eg_class_homepage") }}">Gestion de la Classe</a></li>
+                            <li class=""><a href="{{ path("eg_class_homepage") }}">Gestion de la Classe</a></li>
                             <li><a href="#">Courbes de Progression</a></li>
                             <li><a href="#">Paramètres du Profil </a></li>
                         </ul>
-                    </div>
-                </div>
+                    </li>
+                </ul>
         </div>
     </nav>
 </header>
+<div class="container">
 
 {% block body %}
 
     {% block egBody %}
         {% endblock %}
 {% endblock %}
+
+</div>
 {% block javascripts %}
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.js') }}"></script>
