@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6b74c3c-834a-4fea-9b49-85b5dbd6da6e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/EG/CoreBundle/Controller/DefaultController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/EG/CoreBundle/DependencyInjection/Configuration.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/EG/CoreBundle/DependencyInjection/EGCoreExtension.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/EG/CoreBundle/EGCoreBundle.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/EG/CoreBundle/Resources/config/routing.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/EG/CoreBundle/Resources/config/services.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/EG/CoreBundle/Resources/views/Default/index.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/EG/CoreBundle/Tests/Controller/DefaultControllerTest.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -273,7 +263,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="282000" />
+    <option name="totallyTimeSpent" value="469000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
