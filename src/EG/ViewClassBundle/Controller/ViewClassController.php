@@ -22,6 +22,9 @@ class ViewClassController extends Controller
         $classroom = $em->getRepository("EGClassBundle:ClassRoom")->find($id);
 
         $listPupil= $em->getRepository("EGClassBundle:Pupil")->findBy(array ('classroom' => $classroom ));
-        return $this->render("EGViewClassBundle:Class:view.html.twig", array('listPupil' => $listPupil ));
+        return $this->render("EGViewClassBundle:Class:view.html.twig", array(
+            'listPupil' => $listPupil,
+            'class' => $classroom
+            ));
     }
 }

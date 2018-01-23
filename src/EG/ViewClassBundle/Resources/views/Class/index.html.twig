@@ -1,10 +1,17 @@
+<div class="row">
+    <h2 class="text-center">Classes</h2>
 
-{%  block list %}
-    <div>
-        <ul>
-            {% for class in listClass %}
-                <li><a href="{{ path('eg_view_class_view', {'id' : class.id }) }}">{{ class.classroomName }}</a> </li>
-            {% endfor %}
-        </ul>
-    </div>
-{% endblock %}
+    <ul class="container-fluid bg-3 text-center-sm-3">
+        {% for class in listClass %}
+            <div class="col-sm-3">
+                <li class="list-unstyled">
+                    <a class="link" href="{{ path('eg_view_class_view', {'id' : class.id }) }}">
+                        <div class="panel panel-title well">
+                            <p>{{ class.classroomName }}</p>
+                        </div>
+                    </a>
+                </li>
+            </div>
+        {% endfor %}
+    </ul>
+</div>

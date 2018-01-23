@@ -1,11 +1,23 @@
 {% extends 'EGViewClassBundle::layout.html.twig' %}
 
 {%  block egBody %}
-    <div>
-        <ul>
+    <div class="row">
+        <h2 class="text-center">Liste des élèves de la classe {{ class.classroomName }}</h2>
+        <ul class="container-fluid bg-3 text-center-sm-3">
             {% for pupil in listPupil %}
-            <li> {{ pupil.name }}</li>
+                <div class="col-sm-3">
+                    <li class="list-unstyled">
+                        <a class="link" href="#">
+                            <div class="panel panel-title well">
+                                <p>
+                                    {{ pupil.name }}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                </div>
             {%  endfor %}
         </ul>
     </div>
 {% endblock %}
+
