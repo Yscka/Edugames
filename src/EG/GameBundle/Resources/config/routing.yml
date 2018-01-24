@@ -1,9 +1,9 @@
 eg_game_homepage:
-    path:     /
+    path:     /{id}
     defaults: { _controller: EGGameBundle:Games:index }
 
 eg_game_play:
-    path: /play/{id}
+    path: /play/{pupil}/{id}
     defaults:
         _controller: EGGameBundle:Games:play
     requirements:

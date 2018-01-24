@@ -4,6 +4,7 @@ namespace EG\ClassBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use EG\ClassBundle\Entity\ClassRoom;
+use EG\GameBundle\Entity\Games;
 
 /**
  * Pupil
@@ -47,6 +48,12 @@ class Pupil
      * @ORM\JoinColumn(nullable=true)
      */
     private $classroom;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="EG\GameBundle\Entity\Games", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $games;
 
     public function getId()
     {
@@ -147,5 +154,48 @@ class Pupil
     public function getClassroom()
     {
         return $this->classroom;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->games = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add game.
+     *
+     * @param Games $game
+     *
+     * @return Pupil
+     */
+    public function addGame(Games $game)
+    {
+        $this->games[] = $game;
+
+        return $this;
+    }
+
+    /**
+     * Remove game.
+     *
+     * @param Games $game
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeGame(Games $game)
+    {
+        return $this->games->removeElement($game);
+    }
+
+    /**
+     * Get games.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGames()
+    {
+        return $this->games;
     }
 }

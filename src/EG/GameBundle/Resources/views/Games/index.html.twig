@@ -4,10 +4,10 @@
     <h2 class="text-center">Jeux</h2>
 
     <ul class="container-fluid bg-3 text-center-sm-3">
-        {% for game in listGames %}
+        {% for game in pupil.games %}
             <div class="col-sm-3">
                 <li class="list-unstyled">
-                    <a class="link" href="{{ path('eg_game_play',{id: game.id}) }}">
+                    <a class="link" href="{{ path('eg_game_play', {pupil: pupil.name, id: game.id} ) }}">
                         <div class="panel panel-title well-lg">
                             <p>{{ game.nameGame }}</p>
                         </div>

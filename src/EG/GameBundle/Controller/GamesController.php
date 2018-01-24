@@ -9,29 +9,33 @@ use Symfony\Component\HttpFoundation\Request;
 class GamesController extends Controller
 {
 
-    public function indexAction(){
+    public function indexAction($id){
         $em = $this->getDoctrine()->getManager();
-        $listGames = $em->getRepository("EGGameBundle:Games")->findAll();
+        $pupil = $em->getRepository('EGClassBundle:Pupil')->find($id);
+        $listGames = $em->getRepository('EGGameBundle:Games')->findAll();
 
         return $this->render("EGGameBundle:Games:index.html.twig", array(
-            'listGames' => $listGames,
+            'pupil' => $pupil,
+            'listGames' => $listGames
         ));
     }
 
-    public function playAction($id, Request $request)
+    public function playAction($id, $pupil, Request $request)
     {
         $em = $this->getDoctrine()->getManager();
+        $pupil = $em->getRepository('EGClassBundle:Pupil')->findBy(array('name' => $pupil));
         $game = $em->getRepository("EGGameBundle:Games")->find($id);
-        //if($request->isXmlHttpRequest()) {
-            $test = $request->request->get('test');
-          /*  $game2 = new Games();
-            $game2->setNameGame($test);
+
+     /*   if($request->isXmlHttpRequest()) {
+            //$test = $request->request->get('test');
+            $game2 = new Games();
+            $game2->setNameGame();
             $em->persist($game2);
-            $em->flush();*/
-       // }
+            $em->flush();
+        }*/
         return $this->render("EGGameBundle:Games:play.html.twig", array(
             'game' => $game,
-            'test' => $test
+            'pupil' => $pupil
         ));
     }
 }

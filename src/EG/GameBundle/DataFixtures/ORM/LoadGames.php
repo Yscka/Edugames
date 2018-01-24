@@ -22,4 +22,8 @@ class LoadGames implements FixtureInterface
 
         $manager->flush();
     }
+
+    function getOrder(){
+        return 1;
+    }
 }

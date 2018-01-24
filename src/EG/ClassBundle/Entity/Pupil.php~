@@ -43,11 +43,16 @@ class Pupil
      */
 
     /**
-     * @ORM\ManyToOne(targetEntity="EG\ClassBundle\Entity\ClassRoom", inversedBy="pupil" ,cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="EG\ClassBundle\Entity\ClassRoom", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true)
      */
     private $classroom;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="EG\GameBundle\Entity\Games", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $games;
     public function getId()
     {
         return $this->id;

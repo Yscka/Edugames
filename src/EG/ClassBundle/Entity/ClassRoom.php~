@@ -3,6 +3,7 @@
 namespace EG\ClassBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use EG\ClassBundle\Entity\pupil;
 
 /**
  * Class
@@ -28,10 +29,6 @@ class ClassRoom
      */
     private $classroomName;
 
-    /**
-     * @ORM\OneToMany(targetEntity="EG\ClassBundle\Entity\pupil", mappedBy="classroom")
-     */
-    private $pupil;
     /**
      * Get id
      *
@@ -66,4 +63,8 @@ class ClassRoom
     {
         return $this->classroomName;
     }
+    /**
+     * Constructor
+     */
+
 }

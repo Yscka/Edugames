@@ -12,11 +12,15 @@ class PupilController extends Controller
     public function addAction($id, Request $request)
     {
         $em = $this->getDoctrine()->getManager();
+        $listGames = $em->getRepository('EGGameBundle:Games')->findAll();
         $pupil = new Pupil();
         $form = $this->get('form.factory')->create(PupilType::class, $pupil);
         $classroom = $em->getRepository('EGClassBundle:ClassRoom')->find($id);
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
             $pupil->setClassroom($classroom);
+            foreach ($listGames as $game){
+                $pupil->addGame($game);
+            }
             $em->persist($pupil);
             $em->flush();
             $request->getSession()->getFlashBag()->add('Info', 'Nouvel éléve ajouté à la classe.');
