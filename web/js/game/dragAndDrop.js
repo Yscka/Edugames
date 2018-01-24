@@ -1,4 +1,4 @@
-var renderer = PIXI.autoDetectRenderer(1300, 850);
+var renderer = PIXI.autoDetectRenderer();
 renderer.backgroundColor = 0x000055;
 document.body.appendChild(renderer.view);
 var start = new PIXI.Container();
@@ -22,8 +22,8 @@ function setup() {
         .on('click', loadGame)
         .on('touchstart', loadGame);
 
-    cat.x = 650;
-    cat.y = 750 / 2;
+    cat.x = renderer.width /2;
+    cat.y = renderer.height / 2;
 
     // cat.scale.set(3);
     start.addChild(cat);
