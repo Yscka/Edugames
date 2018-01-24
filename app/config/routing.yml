@@ -1,3 +1,7 @@
+eg_game:
+    resource: "@EGGameBundle/Resources/config/routing.yml"
+    prefix:   /
+
 eg_view_class:
     resource: "@EGViewClassBundle/Resources/config/routing.yml"
     prefix:   /
