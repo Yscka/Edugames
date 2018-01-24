@@ -24,7 +24,6 @@ function setup() {
 
     cat.x = renderer.width /2;
     cat.y = renderer.height / 2;
-
     // cat.scale.set(3);
     start.addChild(cat);
     requestAnimationFrame( animate );
@@ -80,31 +79,31 @@ function game() {
     createStarDraw();
 
     for (var i=1; i < 4; i++){
-        var xR = 200 + Math.random() * 800;
-        var yR = 300 + Math.random() * 400;
+        var xR =  renderer.width/6.5 + Math.random() * renderer.width/1.6;
+        var yR = renderer.height/3 + Math.random() * renderer.height/2;
         createRectSprite(Math.floor(xR) , Math.floor(yR));
         countForm ++;
 
     }
     for (var i=1; i < 4; i++){
-        var xC = 200 + Math.random() * 800;
-        var yC = 300 + Math.random() * 400;
+        var xC = renderer.width/6.5 + Math.random() * renderer.width/1.6;
+        var yC = renderer.height/3 + Math.random() * renderer.height/2;
         createCircleSprite(Math.floor(xC) , Math.floor(yC));
         countForm ++;
 
     }
 
     for (var i=1; i < 4; i++){
-        var xT = 200 + Math.random() * 800;
-        var yT = 300 + Math.random() * 400;
+        var xT = renderer.width/6.5 + Math.random() * renderer.width/1.6;
+        var yT = renderer.height/3 + Math.random() * renderer.height/2;
         createTriangleSprite(Math.floor(xT) , Math.floor(yT));
         countForm ++;
 
     }
 
     for (var i=1; i < 4; i++){
-        var xT = 200 + Math.random() * 800;
-        var yT = 300 + Math.random() * 400;
+        var xT = renderer.width/6.5 + Math.random() * renderer.width/1.6;
+        var yT = renderer.height/3 + Math.random() * renderer.height/2;
         createStarSprite(Math.floor(xT) , Math.floor(yT));
         countForm ++;
 
@@ -118,7 +117,7 @@ function game() {
         var rect = new PIXI.Graphics();
         rect.beginFill(0xFFAA00);
         rect.lineStyle(0);
-        rect.drawRect(50, 50, 350, 150);
+        rect.drawRect(renderer.width/26, renderer.height/18, renderer.width/3.7 , renderer.height/6);
         rect.endFill();
 
         stage.addChild(rect);
@@ -128,7 +127,7 @@ function game() {
 
         var circle = new PIXI.Graphics();
         circle.beginFill(0xe74c3c);
-        circle.drawCircle(550, 125, 100);
+        circle.drawCircle(renderer.width/2.3, renderer.height/6.3, 60);
         circle.endFill();
 
         stage.addChild(circle);
@@ -139,10 +138,10 @@ function game() {
 
         var triangle = new PIXI.Graphics();
         triangle.beginFill(0x4A5FB4);
-        triangle.moveTo(800, 50);
-        triangle.lineTo(700, 200);
-        triangle.lineTo(900, 200);
-        triangle.lineTo(800, 50);
+        triangle.moveTo(renderer.width/1.6, renderer.height/14);
+        triangle.lineTo(renderer.width/1.8, renderer.height/4.5);
+        triangle.lineTo(renderer.width/1.43, renderer.height/4.5);
+        triangle.lineTo(renderer.width/1.6, renderer.height/14);
         triangle.endFill();
 
         stage.addChild(triangle);
@@ -153,7 +152,7 @@ function game() {
 
         var star = new PIXI.Graphics();
         star.beginFill(0xFFFF00);
-        star.drawStar(1050, 125, 5, 100);
+        star.drawStar(renderer.width/1.23, renderer.height/7, 5, renderer.width/12.5);
         star.endFill();
 
         stage.addChild(star);
@@ -166,7 +165,7 @@ function game() {
         var rect = new PIXI.Sprite(texture);
         rect.interactive = true;
         rect.buttonMode = true;
-
+        rect.scale.set(0.6);
         rect.anchor.set(0.5);
 
         rect
@@ -293,14 +292,14 @@ function game() {
 
     function checkForm(form) {
         if (form.test == 'rectangle'){
-            if(form.position.x > 25 && form.position.x< 375 && form.position.y > 25 && form.position.y < 225){
+            if(form.position.x > renderer.width/26 && form.position.x < renderer.width/3.7 && form.position.y > renderer.height/45 && form.position.y < renderer.height/4.5){
                 console.log('ok');
                 stage.removeChild(form);
                 countForm --;
             }
         }
         if (form.test == 'circle'){
-            if(form.position.x > 420 && form.position.x < 580 && form.position.y > 20 && form.position.y < 200 ){
+            if(form.position.x > renderer.width/3.1 && form.position.x < renderer.width/2.1 && form.position.y > renderer.height/45 && form.position.y < renderer.height/4.5 ){
                 console.log(form.position.x);
                 console.log('ok');
                 stage.removeChild(form);
@@ -308,7 +307,7 @@ function game() {
             }
         }
         if (form.test == 'triangle'){
-            if(form.position.x > 675 && form.position.x < 925 && form.position.y > 20 && form.position.y < 200 ){
+            if(form.position.x > renderer.width/1.9 && form.position.x < renderer.width/1.4 && form.position.y > renderer.height/45 && form.position.y < renderer.height/4.5 ){
                 console.log(form.position.x);
                 console.log('ok');
                 stage.removeChild(form);
@@ -316,7 +315,7 @@ function game() {
             }
         }
         if (form.test == 'star'){
-            if(form.position.x > 925 && form.position.x < 1075 && form.position.y > 20 && form.position.y < 200 ){
+            if(form.position.x > renderer.width/1.4 && form.position.x < renderer.width/1.15 && form.position.y > renderer.height/45 && form.position.y < renderer.height/4.5 ){
                 console.log(form.position.x);
                 console.log('ok');
                 stage.removeChild(form);

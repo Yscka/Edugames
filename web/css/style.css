@@ -26,8 +26,8 @@ body {
 /* Canvas Game*/
 canvas
 {
-    width: 90%;
-    height: 90%;
+    width: 90vw;
+    height: 90vh;
     transform: translateX(-50%);
     left: 50%;
     position: absolute;
@@ -58,8 +58,8 @@ canvas
 
     canvas
     {
-        width: 90%;
-        height: 50vh;
+        width: 90vw;
+        height: 80vh;
         transform: translateX(-50%);
         left: 50%;
         position: absolute;
