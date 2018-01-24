@@ -18,21 +18,22 @@ class FollowUpController extends Controller
     public function viewAction($id){
         $em = $this->getDoctrine()->getManager();
         $classroom = $em->getRepository('EGClassBundle:ClassRoom')->find($id);
-
+        $listPupil = $em->getRepository('EGClassBundle:Pupil')->findby(array(
+            'classroom' => $classroom
+        ));
         return $this->render('EGFollowUpBundle:FollowUp:view.html.twig', array(
             'class' => $classroom,
+            'listPupil' => $listPupil
         ));
     }
 
     public function pupilAction($id){
         $em = $this->getDoctrine()->getManager();
-        $classroom = $em->getRepository('EGClassBundle:ClassRoom')->find($id);
-        $listPupil = $em->getRepository('EGClassBundle:Pupil')->findby(array(
-            'classroom' => $classroom
-        ));
+        $pupil = $em->getRepository('EGClassBundle:Pupil')->find($id);
+
+
         return $this->render('EGFollowUpBundle:FollowUp:pupil.html.twig', array(
-            'class' => $classroom,
-            'listPupil' => $listPupil
+            'pupil' => $pupil
         ));
     }
 
@@ -42,7 +43,7 @@ class FollowUpController extends Controller
         $pupil = $em->getRepository('EGClassBundle:Pupil')->find($id);
         $listResult = $em->getRepository('EGGameBundle:GameResult')->findBy(array(
             'pupil' => $pupil->getName()
-        ));
+        ), array('date' => 'DESC'), 15);
 
         return $this->render('EGFollowUpBundle:FollowUp:pupilResult.html.twig',array(
             'pupil' => $pupil,

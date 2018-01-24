@@ -26,6 +26,18 @@ body {
 table, th{
     text-align: center;
 }
+.low{
+    background-color: red;
+}
+.mid-low{
+    background-color: orange;
+}
+.mid-high{
+    background-color: yellow;
+}
+.high{
+    background-color: #4cae4c;
+}
 /* Canvas Game*/
 canvas
 {

@@ -5,7 +5,6 @@
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th>Prénom</th>
                 <th>jeu</th>
                 <th>Progression</th>
                 <th>Date</th>
@@ -13,23 +12,26 @@
             </thead>
             <tbody>
     {% for result in listResult %}
-        {% if result.complete < 30 %}
-            <tr class="danger">
-                <td>{{ result.pupil }}</td>
+        {% if result.complete < 25 %}
+            <tr class="low">
                 <td>{{ result.game }}</td>
                 <td>{{ result.complete }} %</td>
                 <td>{{ result.date|date('d/m/Y') }}</td>
             </tr>
-        {% elseif result.complete < 100 %}
-            <tr class="warning">
-                <td>{{ result.pupil }}</td>
+        {% elseif result.complete < 50 %}
+            <tr class="mid-low">
+                <td>{{ result.game }}</td>
+                <td>{{ result.complete }} %</td>
+                <td>{{ result.date|date('d/m/Y') }}</td>
+            </tr>
+        {% elseif result.complete < 75 %}
+            <tr class="mid-high">
                 <td>{{ result.game }}</td>
                 <td>{{ result.complete }} %</td>
                 <td>{{ result.date|date('d/m/Y') }}</td>
             </tr>
             {% else %}
-            <tr class="success">
-                <td>{{ result.pupil }}</td>
+            <tr class="high">
                 <td>{{ result.game }}</td>
                 <td>{{ result.complete }} %</td>
                 <td>{{ result.date|date('d/m/Y') }}</td>
