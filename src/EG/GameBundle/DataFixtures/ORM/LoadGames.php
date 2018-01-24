@@ -12,15 +12,14 @@ class LoadGames implements FixtureInterface
 {
     public function load(ObjectManager $manager)
     {
-        $names = array(
-            'Drag and Drop'
-        );
 
-        foreach ($names as $name) {
+        $name = 'Drag and Drop';
+        $src = '/Edugames/web/js/game/dragAndDrop.js';
             $game = new Games();
             $game->setNameGame($name);
+            $game->setSrc($src);
             $manager->persist($game);
-        }
+
         $manager->flush();
     }
 }

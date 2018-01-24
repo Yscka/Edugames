@@ -7,6 +7,18 @@ var stage = new PIXI.Container();
 var end = new PIXI.Container();
 var loader;
 
+/*var test = 'un test';
+$.ajax({
+    type:'POST',
+    data: {test:test},
+    url: "",
+    success:function(data){
+    },
+    error:function(){
+        alert('attention');
+    }
+});*/
+
 
 setup();
 
@@ -373,3 +385,10 @@ function endGame() {
     }
 
 }
+
+
+
+
+
+
+

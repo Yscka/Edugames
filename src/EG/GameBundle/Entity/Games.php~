@@ -66,28 +66,4 @@ class Games
     {
         return $this->nameGame;
     }
-
-    /**
-     * Set src.
-     *
-     * @param string $src
-     *
-     * @return Games
-     */
-    public function setSrc($src)
-    {
-        $this->src = $src;
-
-        return $this;
-    }
-
-    /**
-     * Get src.
-     *
-     * @return string
-     */
-    public function getSrc()
-    {
-        return $this->src;
-    }
 }
