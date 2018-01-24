@@ -295,7 +295,7 @@ function game() {
                 console.log('ok');
                 stage.removeChild(form);
                 countForm --;
-                complete += 11.1;
+                complete += 8.33;
                 completed();
             }
         }
@@ -305,8 +305,8 @@ function game() {
                 console.log('ok');
                 stage.removeChild(form);
                 countForm --;
-                complete += 11.1;
-                this.completed();
+                complete += 8.33;
+                completed();
             }
         }
         if (form.test == 'triangle'){
@@ -315,8 +315,8 @@ function game() {
                 console.log('ok');
                 stage.removeChild(form);
                 countForm --;
-                complete += 11.1;
-                this.completed();
+                complete += 8.33;
+                completed();
             }
         }
         if (form.test == 'star'){
@@ -325,13 +325,13 @@ function game() {
                 console.log('ok');
                 stage.removeChild(form);
                 countForm --;
-                complete += 11.1;
-                this.completed();
+                complete += 8.33;
+                completed();
             }
         }
         if(countForm == 0){
-            complete = 100;
-            this.completed();
+            //complete = 100;
+            completed();
             endGame();
             console.log('fini')
         }
