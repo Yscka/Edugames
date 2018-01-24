@@ -1,3 +1,7 @@
+eg_follow_up:
+    resource: "@EGFollowUpBundle/Resources/config/routing.yml"
+    prefix:   /follow-up
+
 eg_game:
     resource: "@EGGameBundle/Resources/config/routing.yml"
     prefix:   /games

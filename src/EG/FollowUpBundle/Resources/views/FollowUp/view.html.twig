@@ -1,0 +1,28 @@
+{% extends 'EGFollowUpBundle::layout.html.twig' %}
+
+{% block egBody %}
+    <div class="row">
+        <h2 class="text-center">Suivi de la Classe</h2>
+
+        <ul class="container">
+                <div class="col-sm-6">
+                    <li class="list-unstyled">
+                        <a class="link" href="{{ path('eg_follow_up_view_pupil', {'id' : class.id }) }}">
+                            <div class="panel panel-title well-lg">
+                                <p>Suivi des élèves</p>
+                            </div>
+                        </a>
+                    </li>
+                </div>
+            <div class="col-sm-6">
+                <li class="list-unstyled">
+                    <a class="link" href="{#{{ path('eg_follow_up_view_game', {'id' : class.id }) }}#}">
+                        <div class="panel panel-title well-lg">
+                            <p>Suivi des jeux</p>
+                        </div>
+                    </a>
+                </li>
+            </div>
+        </ul>
+    </div>
+{% endblock %}

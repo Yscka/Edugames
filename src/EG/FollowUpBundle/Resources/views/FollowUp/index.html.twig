@@ -1,0 +1,21 @@
+{% extends 'EGFollowUpBundle::layout.html.twig' %}
+
+{% block egBody %}
+<div class="row">
+    <h2 class="text-center">Suivi des Classes</h2>
+
+    <ul class="container-fluid bg-3 text-center-sm-3">
+        {% for class in listClass %}
+            <div class="col-sm-3">
+                <li class="list-unstyled">
+                    <a class="link" href="{{ path('eg_follow_up_view', {'id' : class.id }) }}">
+                        <div class="panel panel-title well-lg">
+                            <p>{{ class.classroomName }}</p>
+                        </div>
+                    </a>
+                </li>
+            </div>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

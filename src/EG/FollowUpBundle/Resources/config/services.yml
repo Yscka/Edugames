@@ -1,0 +1,4 @@
+services:
+#    eg_follow_up.example:
+#        class: EG\FollowUpBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

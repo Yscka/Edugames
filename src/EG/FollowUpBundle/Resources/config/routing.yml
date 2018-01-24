@@ -1,0 +1,24 @@
+eg_follow_up_homepage:
+    path:     /
+    defaults: { _controller: EGFollowUpBundle:FollowUp:index }
+
+eg_follow_up_view:
+    path:    /view/{id}
+    defaults:
+        _controller: EGFollowUpBundle:FollowUp:view
+    requirements:
+        id: \d+
+
+eg_follow_up_view_pupil:
+    path:    /view/pupil/{id}
+    defaults:
+        _controller: EGFollowUpBundle:FollowUp:pupil
+    requirements:
+        id: \d+
+
+eg_follow_up_pupil_result:
+    path:    /view/pupil/result/{id}
+    defaults:
+        _controller: EGFollowUpBundle:FollowUp:pupilResult
+    requirements:
+        id: \d+

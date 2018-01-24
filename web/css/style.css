@@ -22,7 +22,10 @@ body {
 .link:hover{
     text-decoration: none;
 }
-
+/* table */
+table, th{
+    text-align: center;
+}
 /* Canvas Game*/
 canvas
 {
