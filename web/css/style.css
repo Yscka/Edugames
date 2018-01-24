@@ -23,6 +23,14 @@ body {
     text-decoration: none;
 }
 
+/* Canvas Game*/
+canvas
+{
+    width: 1300px;
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+}
 /* Footer */
 .footer {
     position: absolute;

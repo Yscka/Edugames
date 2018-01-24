@@ -1,3 +1,8 @@
-eg_game_homepage:
-    path:     /
-    defaults: { _controller: EGGameBundle:Default:index }
+#eg_game_homepage:
+#    path:     /
+#   defaults: { _controller: EGGameBundle:Default:index }
+
+eg_game_draganddrop:
+    path: /dragAndDrop
+    defaults:
+        _controller: EGGameBundle:Games:DragAndDrop
