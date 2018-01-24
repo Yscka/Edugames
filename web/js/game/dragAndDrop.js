@@ -7,19 +7,6 @@ var stage = new PIXI.Container();
 var end = new PIXI.Container();
 var loader;
 
-/*var test = 'un test';
-$.ajax({
-    type:'POST',
-    data: {test:test},
-    url: "",
-    success:function(data){
-    },
-    error:function(){
-        alert('attention');
-    }
-});*/
-
-
 setup();
 
 function setup() {
@@ -83,7 +70,7 @@ function loadProgressHandler() {
 
 }
 function game() {
-
+    var complete = 0;
     var countForm = 0;
     createRectDraw();
     createCircleDraw();
@@ -308,6 +295,8 @@ function game() {
                 console.log('ok');
                 stage.removeChild(form);
                 countForm --;
+                complete += 11.1;
+                completed();
             }
         }
         if (form.test == 'circle'){
@@ -316,6 +305,8 @@ function game() {
                 console.log('ok');
                 stage.removeChild(form);
                 countForm --;
+                complete += 11.1;
+                this.completed();
             }
         }
         if (form.test == 'triangle'){
@@ -324,6 +315,8 @@ function game() {
                 console.log('ok');
                 stage.removeChild(form);
                 countForm --;
+                complete += 11.1;
+                this.completed();
             }
         }
         if (form.test == 'star'){
@@ -332,9 +325,13 @@ function game() {
                 console.log('ok');
                 stage.removeChild(form);
                 countForm --;
+                complete += 11.1;
+                this.completed();
             }
         }
         if(countForm == 0){
+            complete = 100;
+            this.completed();
             endGame();
             console.log('fini')
         }
@@ -359,6 +356,18 @@ function game() {
             this.position.y = newPosition.y;
         }
 
+    }
+    function completed() {
+        $.ajax({
+            type:'POST',
+            data: {complete:complete},
+            url: "",
+            success:function(data){
+            },
+            error:function(){
+                console.log('attention');
+            }
+        });
     }
 
 
