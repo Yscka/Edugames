@@ -1,13 +1,15 @@
+{% extends 'EGGameBundle::layout.html.twig' %}
+{% block egBody %}
 <div class="row">
-    <h2 class="text-center">Classes</h2>
+    <h2 class="text-center">Jeux</h2>
 
     <ul class="container-fluid bg-3 text-center-sm-3">
-        {% for class in listClass %}
+        {% for game in listGames %}
             <div class="col-sm-3">
                 <li class="list-unstyled">
-                    <a class="link" href="{{ path('eg_view_class_view', {'id' : class.id }) }}">
+                    <a class="link" href="{{ path('eg_game_play',{id: game.id}) }}">
                         <div class="panel panel-title well-lg">
-                            <p>{{ class.classroomName }}</p>
+                            <p>{{ game.nameGame }}</p>
                         </div>
                     </a>
                 </li>
@@ -15,3 +17,4 @@
         {% endfor %}
     </ul>
 </div>
+{% endblock %}

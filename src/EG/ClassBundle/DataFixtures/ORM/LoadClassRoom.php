@@ -17,7 +17,7 @@ class LoadClassRoom implements FixtureInterface
 
         foreach ($names as $name) {
             $classroom = new ClassRoom();
-            $classroom->setName($name);
+            $classroom->setClassroomName($name);
 
             $pupil1 = new Pupil();
             $pupil1->setName('eleve 1');
