@@ -292,7 +292,7 @@ function game() {
     function checkForm(form) {
         if (form.test == 'rectangle'){
             if(form.position.x > renderer.width/26 && form.position.x < renderer.width/3.7 && form.position.y > renderer.height/45 && form.position.y < renderer.height/4.5){
-                console.log('ok');
+               // console.log('ok');
                 stage.removeChild(form);
                 countForm --;
                 complete += 8.33;
@@ -301,8 +301,8 @@ function game() {
         }
         if (form.test == 'circle'){
             if(form.position.x > renderer.width/3.1 && form.position.x < renderer.width/2.1 && form.position.y > renderer.height/45 && form.position.y < renderer.height/4.5 ){
-                console.log(form.position.x);
-                console.log('ok');
+                //console.log(form.position.x);
+                //console.log('ok');
                 stage.removeChild(form);
                 countForm --;
                 complete += 8.33;
@@ -311,8 +311,8 @@ function game() {
         }
         if (form.test == 'triangle'){
             if(form.position.x > renderer.width/1.9 && form.position.x < renderer.width/1.4 && form.position.y > renderer.height/45 && form.position.y < renderer.height/4.5 ){
-                console.log(form.position.x);
-                console.log('ok');
+               // console.log(form.position.x);
+                //console.log('ok');
                 stage.removeChild(form);
                 countForm --;
                 complete += 8.33;
@@ -321,8 +321,8 @@ function game() {
         }
         if (form.test == 'star'){
             if(form.position.x > renderer.width/1.4 && form.position.x < renderer.width/1.15 && form.position.y > renderer.height/45 && form.position.y < renderer.height/4.5 ){
-                console.log(form.position.x);
-                console.log('ok');
+                //console.log(form.position.x);
+                //console.log('ok');
                 stage.removeChild(form);
                 countForm --;
                 complete += 8.33;
