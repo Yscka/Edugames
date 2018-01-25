@@ -21,6 +21,7 @@
             <div class="navbar-header">
                  <a class="navbar-brand center-block" href="{{ path("eg_core_homepage") }}">Edugames</a>
             </div>
+           {% if app.user %}
                 <ul class="nav navbar-nav navbar-left">
                     <li class="dropdown">
                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class=" glyphicon glyphicon-menu-hamburger"></span> </a>
@@ -30,10 +31,11 @@
                             <li><a href="{{ path("eg_class_homepage") }}">Gestion des Classes</a></li>
                             <li><a href="{{ path("eg_follow_up_homepage") }}">Suivi des Classes</a></li>
                             <li><a href="#">Profil</a></li>
-                            <li><a href="#">Déconnexion </a></li>
+                            <li><a href="{{ path("fos_user_security_logout") }}">Déconnexion </a></li>
                         </ul>
                     </li>
                 </ul>
+           {% endif %}
         </div>
     </nav>
 </header>
