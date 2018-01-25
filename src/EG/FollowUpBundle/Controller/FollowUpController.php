@@ -2,7 +2,9 @@
 
 namespace EG\FollowUpBundle\Controller;
 
+use EG\FollowUpBundle\EGFollowUpBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class FollowUpController extends Controller
 {
@@ -48,6 +50,41 @@ class FollowUpController extends Controller
         return $this->render('EGFollowUpBundle:FollowUp:pupilResult.html.twig',array(
             'pupil' => $pupil,
             'listResult' => $listResult
+        ));
+    }
+    public function gamesAction($id){
+        $em= $this->getDoctrine()->getManager();
+        $pupil= $em->getRepository('EGClassBundle:Pupil')->find($id);
+        if (null === $pupil){
+             throw new NotFoundHttpException('L\'élève n\'existe pas');
+        }
+
+       // $listGames = $pupil->getGames();
+        return $this->render('EGFollowUpBundle:FollowUp:games.html.twig', array (
+            //'listGames' => $listGames,
+            'pupil' => $pupil
+        ));
+    }
+    public function gameResultAction($id, $game){
+
+        $em= $this->getDoctrine()->getManager();
+        $pupil = $em->getRepository('EGClassBundle:Pupil')->find($id);
+        $game = $em->getRepository('EGGameBundle:Games')->findOneBy(array(
+            'nameGame' => $game,
+        ));
+        if(null ===$pupil){
+            throw new NotFoundHttpException("L'élève n'existe pas");
+        }
+
+        $listResult = $em->getRepository('EGGameBundle:GameResult')->findBy(array(
+            'pupil' => $pupil->getName(),
+            'game' => $game->getNameGame(),
+        ), array('date' => 'DESC'));
+
+        return $this->render('EGFollowUpBundle:FollowUp:gameResult.html.twig',array(
+            'pupil' => $pupil,
+            'listResult' => $listResult,
+            'game' => $game,
         ));
     }
 }

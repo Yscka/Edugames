@@ -22,3 +22,17 @@ eg_follow_up_pupil_result:
         _controller: EGFollowUpBundle:FollowUp:pupilResult
     requirements:
         id: \d+
+
+eg_follow_up_pupil_game:
+    path: /view/pupil/game/{id}
+    defaults:
+        _controller: EGFollowUpBundle:FollowUp:games
+    requirements:
+        id: \d+
+
+eg_follow_up_pupil_game_result:
+    path: /view/pupil/game/result/{id}/{game}
+    defaults:
+        _controller: EGFollowUpBundle:FollowUp:gameResult
+    requirements:
+          id: \d+
