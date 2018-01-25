@@ -23,17 +23,17 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @ORM\Column(name="name", type="string", length=180, nullable=false)
+     * @ORM\Column(name="name", type="string", length=180)
      */
     private $name;
 
     /**
-     * @ORM\Column(name="lastname", type="string", length=180, nullable=false)
+     * @ORM\Column(name="lastname", type="string", length=180)
      */
     private $lastname;
 
     /**
-     * @ORM\ManyToMany(targetEntity="EG\ClassBundle\Entity\ClassRoom", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="EG\ClassBundle\Entity\Classroom", cascade={"persist"})
      */
     private $classroom;
     /**
@@ -85,40 +85,4 @@ class User extends BaseUser
     }
 
 
-
-    /**
-     * Add classroom.
-     *
-     * @param \EG\ClassBundle\Entity\Classroom $classroom
-     *
-     * @return User
-     */
-    public function addClassroom(\EG\ClassBundle\Entity\Classroom $classroom)
-    {
-        $this->classroom[] = $classroom;
-
-        return $this;
-    }
-
-    /**
-     * Remove classroom.
-     *
-     * @param \EG\ClassBundle\Entity\Classroom $classroom
-     *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
-     */
-    public function removeClassroom(\EG\ClassBundle\Entity\Classroom $classroom)
-    {
-        return $this->classroom->removeElement($classroom);
-    }
-
-    /**
-     * Get classroom.
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getClassroom()
-    {
-        return $this->classroom;
-    }
 }
