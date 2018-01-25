@@ -21,6 +21,8 @@ class AppKernel extends Kernel
             new EG\ViewClassBundle\EGViewClassBundle(),
             new EG\GameBundle\EGGameBundle(),
             new EG\FollowUpBundle\EGFollowUpBundle(),
+            new EG\UserBundle\EGUserBundle(),
+            new \FOS\UserBundle\FOSUserBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
