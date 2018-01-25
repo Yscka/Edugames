@@ -34,7 +34,8 @@ class PupilController extends Controller
         ));
     }
 
-    public function deleteAction($id, Request $request){
+    public function deleteAction($id, Request $request)
+    {
         $em = $this->getDoctrine()->getManager();
 
         $pupil = $em->getRepository('EGClassBundle:Pupil')->find($id);
@@ -60,4 +61,33 @@ class PupilController extends Controller
             'class' => $classroom
         ));
     }
+
+    public function editAction($id, Request $request){
+        $em = $this->getDoctrine()->getManager();
+
+        $pupil = $em->getRepository('EGClassBundle:Pupil')->find($id);
+
+        if (null === $pupil) {
+            throw new NotFoundHttpException("L'éléve n'existe pas.");
+        }
+        $classroom= $pupil->getClassroom();
+        $form = $this->get('form.factory')->create(PupilType::class, $pupil);
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+
+            $em->flush();
+            $request->getSession()->getFlashBag()->add('Info', 'L\'élève a bien été modifié');
+
+            return $this->RedirectToRoute('eg_class_view', array(
+                'id' => $classroom->getId(),
+            ));
+        }
+          return $this-> render('EGClassBundle:Pupil:edit.html.twig', array(
+              'pupil'=>$pupil,
+              'form'=> $form->createView(),
+              'class'=> $classroom,
+          ));
+
+
+        }
+
 }
