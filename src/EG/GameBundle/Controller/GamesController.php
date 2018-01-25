@@ -26,9 +26,7 @@ class GamesController extends Controller
         $em = $this->getDoctrine()->getManager();
         $pupil = $em->getRepository('EGClassBundle:Pupil')->findOneBy(array('name' => $pupil));
         $game = $em->getRepository("EGGameBundle:Games")->find($id);
-
-
-
+        
         if($request->isXmlHttpRequest()) {
             $result = $em->getRepository('EGGameBundle:GameResult')->findOneBy(
                 array('pupil' => $pupil->getName()),
