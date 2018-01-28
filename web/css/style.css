@@ -14,7 +14,10 @@ body {
 .navbar-nav > li > a {
     color: whitesmoke !important;
 }
-
+/* login */
+.vertical-offset-100{
+    padding-top:100px;
+}
 /* block div */
 .panel{
     background-color: #dff0d8;

@@ -33,7 +33,7 @@
                                {% endif %}
                             <li><a href="{{ path("eg_class_homepage") }}">Gestion des Classes</a></li>
                             <li><a href="{{ path("eg_follow_up_homepage") }}">Suivi des Classes</a></li>
-                            <li><a href="#">Profil</a></li>
+                            <li><a href="{{ path('eg_user_profile', {id: app.user.id }) }}">Profil</a></li>
                             <li><a href="{{ path("fos_user_security_logout") }}">Déconnexion </a></li>
                         </ul>
                     </li>
@@ -45,6 +45,17 @@
 <div class="container-fluid text-center" id="container">
     <div class="row">
 {% block body %}
+
+    {% for key, messages in app.session.flashbag.all() %}
+        {% for message in messages %}
+            <div class="alert alert-{{ key }}">
+                {{ message|trans({}, 'FOSUserBundle') }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    {% block fos_user_content %}
+    {% endblock fos_user_content %}
 
     {% block egBody %}
         {% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'EGUserBundle::layout.html.twig' %}
+
+ {% block fos_user_content %}
+
+    <h2 class="text-center">Mon profil</h2>
+    <div class="container">
+    <div class="well text-justify">
+        <p>Nom d'utilisateur : {{ user.username }}</p>
+        <p>Prénom : {{ user.name }}</p>
+        <p>nom : {{ user.lastname }}</p>
+        <p>adresse mail : {{ user.email }}</p>
+        <p><a href="#" class="btn btn-primary">Editer mon profil</a>
+            <a href="{{ path('eg_core_homepage') }}" class="btn btn-default "><span class="glyphicon glyphicon-chevron-left"></span> Retour</a></p>
+    </div>
+    </div>
+
+ {% endblock fos_user_content %}

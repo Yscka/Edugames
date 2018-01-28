@@ -14,10 +14,11 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
         $listUser = $em->getRepository('EGUserBundle:User')->findAll();
 
-        return $this->render('EGUserBundle:User:index.html.twig', array(
+        return $this->render('EGUserBundle:Admin:index.html.twig', array(
             'listUser' => $listUser,
         ));
     }
+
     public function addAction(Request $request)
     {
         $user = new User();
@@ -30,10 +31,11 @@ class UserController extends Controller
             $request->getSession()->getFlashBag()->add('Info', 'Enseignant modifié.');
             return $this->redirectToRoute('eg_user_homepage');
         }
-        return $this->render('EGUserBundle:User:edit.html.twig', array(
+        return $this->render('EGUserBundle:Admin:edit.html.twig', array(
             'form' => $form->createView()
         ));
     }
+
     public function editAction($id, Request $request)
     {
         $em = $this->getDoctrine()->getManager();
@@ -47,7 +49,7 @@ class UserController extends Controller
             $request->getSession()->getFlashBag()->add('Info', 'Enseignant modifié.');
             return $this->redirectToRoute('eg_user_homepage');
         }
-        return $this->render('EGUserBundle:User:edit.html.twig', array(
+        return $this->render('EGUserBundle:Admin:edit.html.twig', array(
             'form' => $form->createView()
         ));
     }
@@ -69,8 +71,18 @@ class UserController extends Controller
             $request->getSession()->getFlashBag()->add('Info', 'Enseignant Supprimé.');
             return $this->redirectToRoute('eg_user_homepage');
         }
-        return $this->render('EGUserBundle:User:delete.html.twig', array(
+        return $this->render('EGUserBundle:Admin:delete.html.twig', array(
             'form' => $form->createView(),
+            'user' => $user
+        ));
+    }
+
+    public function profileAction($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository('EGUserBundle:User')->find($id);
+
+        return $this->render('EGUserBundle:User:profile.html.twig', array(
             'user' => $user
         ));
     }

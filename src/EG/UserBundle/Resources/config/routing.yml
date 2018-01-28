@@ -1,18 +1,23 @@
 eg_user_homepage:
-    path:     /
+    path:     /admin
     defaults: { _controller: EGUserBundle:User:index }
 
 eg_user_add:
-    path: /add
+    path: /admin/add
     defaults:
         _controller: EGUserBundle:User:add
 
 eg_user_edit:
-    path:    /edit/{id}
+    path:    /admin/edit/{id}
     defaults:
         _controller: EGUserBundle:User:edit
 
 eg_user_delete:
-    path:    /delete/{id}
+    path:    /admin/delete/{id}
     defaults:
         _controller: EGUserBundle:User:delete
+
+eg_user_profile:
+    path: /profile/{id}
+    defaults:
+        _controller: EGUserBundle:User:profile

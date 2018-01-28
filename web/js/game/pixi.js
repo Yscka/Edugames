@@ -20554,7 +20554,7 @@ var _canUploadSameBuffer2 = _interopRequireDefault(_canUploadSameBuffer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * User's customizable globals for overriding the default PIXI settings, such
+ * Admin's customizable globals for overriding the default PIXI settings, such
  * as a renderer's default resolution, framerate, float percision, etc.
  * @example
  * // Use the native window resolution as the default resolution

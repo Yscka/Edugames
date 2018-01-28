@@ -7,7 +7,7 @@ use EG\ClassBundle\Entity\Classroom;
 use FOS\UserBundle\Model\User as BaseUser;
 
 /**
- * User
+ * Admin
  *
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="EG\UserBundle\Repository\UserRepository")
