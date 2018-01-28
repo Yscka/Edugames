@@ -3,6 +3,7 @@
 namespace EG\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use EG\ClassBundle\Entity\Classroom;
 use FOS\UserBundle\Model\User as BaseUser;
 
 /**
@@ -25,17 +26,17 @@ class User extends BaseUser
     /**
      * @ORM\Column(name="name", type="string", length=180, nullable=false)
      */
-    private $name;
+    protected $name;
 
     /**
      * @ORM\Column(name="lastname", type="string", length=180, nullable=false)
      */
-    private $lastname;
+    protected $lastname;
 
     /**
      * @ORM\ManyToMany(targetEntity="EG\ClassBundle\Entity\ClassRoom", cascade={"persist"})
      */
-    private $classroom;
+    protected $classroom;
     /**
      * Set name.
      *
@@ -89,11 +90,11 @@ class User extends BaseUser
     /**
      * Add classroom.
      *
-     * @param \EG\ClassBundle\Entity\Classroom $classroom
+     * @param Classroom $classroom
      *
      * @return User
      */
-    public function addClassroom(\EG\ClassBundle\Entity\Classroom $classroom)
+    public function addClassroom(Classroom $classroom)
     {
         $this->classroom[] = $classroom;
 
@@ -103,11 +104,11 @@ class User extends BaseUser
     /**
      * Remove classroom.
      *
-     * @param \EG\ClassBundle\Entity\Classroom $classroom
+     * @param Classroom $classroom
      *
      * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeClassroom(\EG\ClassBundle\Entity\Classroom $classroom)
+    public function removeClassroom(Classroom $classroom)
     {
         return $this->classroom->removeElement($classroom);
     }

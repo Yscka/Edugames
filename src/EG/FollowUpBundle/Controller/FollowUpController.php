@@ -9,8 +9,8 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class FollowUpController extends Controller
 {
     public function indexAction(){
-        $em = $this->getDoctrine()->getManager();
-        $listClass = $em->getRepository('EGClassBundle:ClassRoom')->findAll();
+        $user = $this->getUser();
+        $listClass = $user->getClassroom();;
 
         return $this->render('EGFollowUpBundle:FollowUp:index.html.twig', array(
             'listClass' => $listClass,

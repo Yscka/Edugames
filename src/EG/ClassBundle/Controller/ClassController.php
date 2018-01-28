@@ -10,9 +10,8 @@ use Symfony\Component\HttpFoundation\Request;
 class ClassController extends Controller
 {
     public function indexAction(){
-        $em = $this->getDoctrine()->getManager();
-        // On récupére la liste des éleves si une classe est présente
-        $listClass = $em->getRepository('EGClassBundle:ClassRoom')->findAll();
+        $user = $this->getUser();
+        $listClass = $user->getClassroom();;
 
         return $this->render('EGClassBundle:Class:index.html.twig', array(
             'listClass' => $listClass
@@ -38,12 +37,13 @@ class ClassController extends Controller
 
     public function addAction(Request $request){
         $classRoom = new ClassRoom();
-
+        $user = $this->getUser();
         $form   = $this->get('form.factory')->create(ClassRoomType::class, $classRoom);
 
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
 
             $em = $this->getDoctrine()->getManager();
+            $user->addClassroom($classRoom);
             $em->persist($classRoom);
             $em->flush();
             $request->getSession()->getFlashBag()->add('Info', 'Classe bien enregistrée.');

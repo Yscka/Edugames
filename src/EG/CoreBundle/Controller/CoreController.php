@@ -8,11 +8,7 @@ class CoreController extends Controller
 {
     public function indexAction()
     {
-
-
-
         return $this->render('EGCoreBundle:Core:index.html.twig');
-
     }
 
 }
