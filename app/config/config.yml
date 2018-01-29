@@ -144,3 +144,8 @@ fos_user:
     registration:
         form:
             type: EG\UserBundle\Form\RegistrationType
+    profile:
+        form:
+            type: EG\UserBundle\Form\ProfileType
+            type: EG\UserBundle\Form\ChangePasswordType
+

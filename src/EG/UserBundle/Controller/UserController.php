@@ -3,8 +3,12 @@
 namespace EG\UserBundle\Controller;
 
 use EG\UserBundle\Entity\User;
+use EG\UserBundle\Form\changePasswordType;
+use EG\UserBundle\Form\ProfileType;
 use EG\UserBundle\Form\RegistrationType;
 use EG\UserBundle\Form\UserType;
+use FOS\UserBundle\Form\Type\ChangePasswordFormType;
+use FOS\UserBundle\Form\Type\ProfileFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -83,6 +87,47 @@ class UserController extends Controller
         $user = $em->getRepository('EGUserBundle:User')->find($id);
 
         return $this->render('EGUserBundle:User:profile.html.twig', array(
+            'user' => $user
+        ));
+    }
+    public function profilEditAction($id, Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository('EGUserBundle:User')->find($id);
+
+        $form = $this->get('form.factory')->create(ProfileType::class, $user);
+
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+            $em->flush();
+            $request->getSession()->getFlashBag()->add('Info', 'Profile modifié.');
+            return $this->redirectToRoute('eg_user_profile', array(
+                'id' => $id
+            ));
+        }
+
+        return $this->render('EGUserBundle:User:edit.html.twig',array(
+            'form' => $form->createView(),
+            'user' => $user
+        ));
+    }
+
+    public function changePasswordAction($id, Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository('EGUserBundle:User')->find($id);
+
+        $form = $this->get('form.factory')->create(changePasswordType::class, $user);
+
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+            $userManager = $this->container->get('fos_user.user_manager');
+            $userManager->updatePassword($user);
+            $em->flush();
+            $request->getSession()->getFlashBag()->add('Info', 'Mot de passe modifié.');
+            return $this->redirectToRoute('eg_user_profile', array(
+                'id' => $id
+            ));
+        }
+
+        return $this->render('EGUserBundle:User:change_password.html.twig',array(
+            'form' => $form->createView(),
             'user' => $user
         ));
     }

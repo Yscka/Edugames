@@ -18,3 +18,13 @@ services:
         class: EGUserBundle\Form\RegistrationType
         tags:
             - { name: form.type, alias: eg_user_registration }
+
+    eg.form.profile:
+        class: EGUserBundle\Form\ProfileType
+        tags:
+            - { name: form.type, aliad: eg_user_profile }
+
+    eg_user_change_password:
+        class: EGUserBundle\Form\ChangePasswordType
+        tags:
+            - { name: form.type, aliad: eg_user_profile }

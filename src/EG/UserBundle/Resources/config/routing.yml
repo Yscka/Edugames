@@ -11,13 +11,33 @@ eg_user_edit:
     path:    /admin/edit/{id}
     defaults:
         _controller: EGUserBundle:User:edit
+    requirements:
+        id: \d+
 
 eg_user_delete:
     path:    /admin/delete/{id}
     defaults:
         _controller: EGUserBundle:User:delete
+    requirements:
+        id: \d+
 
 eg_user_profile:
     path: /profile/{id}
     defaults:
         _controller: EGUserBundle:User:profile
+    requirements:
+        id: \d+
+
+eg_user_profile_edit:
+    path: /profile/edit/{id}
+    defaults:
+        _controller: EGUserBundle:User:profilEdit
+    requirements:
+        id: \d+
+
+eg_user_profile_change_password:
+    path: /profile/change_password/{id}
+    defaults:
+        _controller: EGUserBundle:User:changePassword
+    requirements:
+        id: \d+
