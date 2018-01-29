@@ -147,5 +147,7 @@ fos_user:
     profile:
         form:
             type: EG\UserBundle\Form\ProfileType
+    change_password:
+        form:
             type: EG\UserBundle\Form\ChangePasswordType
 

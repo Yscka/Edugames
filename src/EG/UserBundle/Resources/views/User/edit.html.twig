@@ -1,6 +1,9 @@
 {% extends 'EGUserBundle::layout.html.twig' %}
 
 {% block egBody %}
-    {{ form(form) }}
-    <a href="{{ path('eg_user_profile_change_password', {id: user.id}) }}" class="btn btn-primary">Modifier le mot de passe</a>
+    <div class="container">
+        {{ form(form) }}
+        <a href="{{ path('eg_user_profile_change_password', {id: user.id}) }}" class="btn btn-primary">Modifier le mot de passe</a>
+        <a href="{{ path('eg_user_profile', {id: user.id}) }}" class="btn btn-default "><span class="glyphicon glyphicon-chevron-left"></span> Retour</a></p>
+    </div>
 {% endblock %}

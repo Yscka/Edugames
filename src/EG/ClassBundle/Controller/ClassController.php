@@ -46,7 +46,7 @@ class ClassController extends Controller
             $user->addClassroom($classRoom);
             $em->persist($classRoom);
             $em->flush();
-            $request->getSession()->getFlashBag()->add('Info', 'Classe bien enregistrée.');
+            $request->getSession()->getFlashBag()->add('success', 'Classe créé avec succés.');
             return $this->redirectToRoute('eg_class_homepage');
         }
         return $this->render('EGClassBundle:Class:add.html.twig', array(
@@ -66,7 +66,7 @@ class ClassController extends Controller
 
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
             $em->flush();
-            $request->getSession()->getFlashBag()->add('Info', 'Classe bien enregistrée.');
+            $request->getSession()->getFlashBag()->add('success', 'Classe modifié avec succés.');
             return $this->redirectToRoute('eg_class_homepage');
         }
         return $this->render('EGClassBundle:Class:edit.html.twig', array(
@@ -91,7 +91,7 @@ class ClassController extends Controller
             }
             $em->remove($classRoom);
             $em->flush();
-            $request->getSession()->getFlashBag()->add('Info', 'Classe Supprimer.');
+            $request->getSession()->getFlashBag()->add('warning', 'Classe supprimé avec succés.');
             return $this->redirectToRoute('eg_class_homepage');
         }
 
@@ -118,7 +118,7 @@ class ClassController extends Controller
                 $em->remove($pupil);
             }
             $em->flush();
-            $request->getSession()->getFlashBag()->add('Info', 'Classe Supprimer.');
+            $request->getSession()->getFlashBag()->add('warning', 'élèves supprimés.');
             return $this->redirectToRoute('eg_class_view', array(
                 'id' => $id
             ));

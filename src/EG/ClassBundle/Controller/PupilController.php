@@ -23,7 +23,7 @@ class PupilController extends Controller
             }
             $em->persist($pupil);
             $em->flush();
-            $request->getSession()->getFlashBag()->add('Info', 'Nouvel éléve ajouté à la classe.');
+            $request->getSession()->getFlashBag()->add('success', 'Nouvel éléve ajouté à la classe.');
             return $this->redirectToRoute('eg_class_view', array(
                 'id' => $id
             ));
@@ -49,7 +49,7 @@ class PupilController extends Controller
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
             $em->remove($pupil);
             $em->flush();
-            $request->getSession()->getFlashBag()->add('Info', 'Classe Supprimer.');
+            $request->getSession()->getFlashBag()->add('warning', 'élève supprimé avec succés.');
             return $this->redirectToRoute('eg_class_view', array(
                 'id' => $classroom->getId(),
             ));
@@ -75,7 +75,7 @@ class PupilController extends Controller
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
 
             $em->flush();
-            $request->getSession()->getFlashBag()->add('Info', 'L\'élève a bien été modifié');
+            $request->getSession()->getFlashBag()->add('success', 'L\'élève a bien été modifié');
 
             return $this->RedirectToRoute('eg_class_view', array(
                 'id' => $classroom->getId(),

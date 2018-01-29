@@ -98,7 +98,7 @@ class UserController extends Controller
 
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
             $em->flush();
-            $request->getSession()->getFlashBag()->add('Info', 'Profile modifié.');
+            $request->getSession()->getFlashBag()->add('success', 'Profile modifié avec succés.');
             return $this->redirectToRoute('eg_user_profile', array(
                 'id' => $id
             ));
@@ -120,7 +120,7 @@ class UserController extends Controller
             $userManager = $this->container->get('fos_user.user_manager');
             $userManager->updatePassword($user);
             $em->flush();
-            $request->getSession()->getFlashBag()->add('Info', 'Mot de passe modifié.');
+            $request->getSession()->getFlashBag()->add('success', 'Mot de passe modifié avec succés.');
             return $this->redirectToRoute('eg_user_profile', array(
                 'id' => $id
             ));
