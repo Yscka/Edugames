@@ -5,12 +5,14 @@ var start = new PIXI.Container();
 var loading = new PIXI.Container();
 var stage = new PIXI.Container();
 var end = new PIXI.Container();
+var url= '//192.168.8.150/Edugames/web/js/game/img/';
+
 var loader;
 
 setup();
 
 function setup() {
-    var texture = PIXI.Texture.fromImage('//localhost/testPixi/img/cat.png');
+    var texture = PIXI.Texture.fromImage(url+'/cat.png');
 
     var cat = new PIXI.Sprite(texture);
 
@@ -37,10 +39,10 @@ function setup() {
 }
 function loadGame() {
     loader = PIXI.loader
-        .add(["//localhost/testPixi/img/rectangle.png",
-            "//localhost/testPixi/img/cercle.png",
-            "//localhost/testPixi/img/star.png",
-            "//localhost/testPixi/img/triangle.png"])
+        .add([url+"/rectangle.png",
+            url+"/cercle.png",
+            url+"/star.png",
+            url+"/triangle.png"])
         .on('progress', loadProgressHandler)
         .load(game)
 }
@@ -159,7 +161,7 @@ function game() {
     }
     function createRectSprite(x,y) {
 
-        var texture = PIXI.Texture.fromImage('//localhost/testPixi/img/rectangle.png');
+        var texture = PIXI.Texture.fromImage(url+'/rectangle.png');
 
         var rect = new PIXI.Sprite(texture);
         rect.interactive = true;
@@ -188,7 +190,7 @@ function game() {
     }
     function createCircleSprite(x,y) {
 
-        var texture = PIXI.Texture.fromImage('//localhost/testPixi/img/cercle.png');
+        var texture = PIXI.Texture.fromImage(url+'/cercle.png');
 
         var circle = new PIXI.Sprite(texture);
         circle.interactive = true;
@@ -215,7 +217,7 @@ function game() {
     }
     function createTriangleSprite(x,y) {
 
-        var texture = PIXI.Texture.fromImage('//localhost/testPixi/img/triangle.png');
+        var texture = PIXI.Texture.fromImage(url+'/triangle.png');
 
         var triangle = new PIXI.Sprite(texture);
         triangle.interactive = true;
@@ -244,7 +246,7 @@ function game() {
 
     function createStarSprite(x,y) {
 
-        var texture = PIXI.Texture.fromImage('//localhost/testPixi/img/star.png');
+        var texture = PIXI.Texture.fromImage(url+'/star.png');
 
         var star = new PIXI.Sprite(texture);
         star.interactive = true;
