@@ -1,5 +1,5 @@
 {% extends "EGCoreBundle::layout.html.twig" %}
-
+{% block title %}{{ parent() }} - Mes classes{% endblock %}
 
 {% block egBody %}
     {{ render(controller('EGViewClassBundle:ViewClass:index'))  }}

@@ -1,34 +1,37 @@
 {% extends 'EGClassBundle::layout.html.twig' %}
 
-{% block title %}
-    {{ class.classroomName }} - {{ parent() }}
-{% endblock %}
+{% block title %}{{ parent() }} - Administration de la Classe {{ class.classroomName }}{% endblock %}
 
 {% block egBody %}
-    <h2 class="text-center">Gestion des élèves de la Classe {{ class.classroomName }}</h2>
+    <h2 class="text-center">Administration de la Classe {{ class.classroomName }}</h2>
+    <div class="container">
     <div class="row">
-        <ul class="container-fluid bg-3 text-center-sm-3">
-            {% for pupil in listPupil %}
-                <div class="col-sm-3">
-                    <div class="panel panel-title well">
-                        <li class="list-unstyled">
-                            <p>{{ pupil.lastname }}
-                                {{ pupil.name }}</p>
-                            <p>{{ pupil.birthdate|date('d/m/Y')  }}</p>
-                            <a href="{{ path('eg_pupil_edit', {id: pupil.id}) }}" class="btn btn-primary">Editer l'éléve</a>
-                            <a href="{{ path('eg_pupil_delete', {id: pupil.id}) }}" class="btn btn-danger">Supprimer l'éléve <span class="glyphicon glyphicon-trash" ></span></a>
-                        </li>
-                    </div>
-                </div>
-            {% endfor %}
-            <div class="col-sm-3">
-                <div class="panel panel-title well">
-                    <li class="list-unstyled">
-                        <a href="{{ path('eg_pupil_add', {id: class.id}) }}" class="btn btn-success">Ajouter un éléve <span class="glyphicon glyphicon-plus" ></span></a>
-                    </li>
-                </div>
-            </div>
-        </ul>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Date de naissance</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for pupil in listPupil %}
+                    <tr>
+                        <td>{{ pupil.name }}</td>
+                        <td>{{ pupil.Lastname }}</td>
+                        <td>{{ pupil.birthdate|date('d/m/Y') }}</td>
+                        <td><a href="{{ path('eg_pupil_edit', {id: pupil.id}) }}" class="btn btn-primary">Editer l'éléve</a></td>
+                        <td><a href="{{ path('eg_pupil_delete', {id: pupil.id}) }}" class="btn btn-danger">Supprimer l'éléve <span class="glyphicon glyphicon-trash" ></span></a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
     <div class="text-center col col-lg-12">
         <a href="{{ path('eg_class_edit', {id: class.id}) }}" class="btn btn-primary">Modifier le nom de classe</a>
         <a href="{{ path('eg_class_delete_all', {id: class.id}) }}" class="btn btn-danger">Supprimer tout les éléves <span class="glyphicon glyphicon-trash" ></span></a>

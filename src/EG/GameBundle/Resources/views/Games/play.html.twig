@@ -1,8 +1,10 @@
 {% extends "EGGameBundle::layout.html.twig" %}
+{% block title %}{{ parent() }} - {{ game.nameGame }}{% endblock %}
 
 {% block egBody %}
     <div class="container">
         <div class="row">
+            <h2 class="text-center">{{ game.nameGame }}</h2>
             <div class="canvas">
                 {# <script src="//localhost/testPixi/dragAndDropV2.js"></script>#}
                 <script src="{{ game.src }}"></script>

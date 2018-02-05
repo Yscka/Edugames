@@ -1,12 +1,12 @@
 {% extends 'EGClassBundle::layout.html.twig' %}
 
-{% block title %}
-    Suppression {{ pupil.name }} {{ pupil.lastName }} - {{ parent() }}
-{% endblock %}
+
+{% block title %}{{ parent() }} - Supression de l'élève {{ pupil.name }} {{ pupil.lastName }}{% endblock %}
+
 
 {% block egBody %}
     <div class="well text-center">
-        <p>Êtes-vous sur de vouloir supprimer l'éleve {{ pupil.name }} {{ pupil.lastName }}</p>
+        <p>Êtes-vous sur de vouloir supprimer l'élève {{ pupil.name }} {{ pupil.lastName }}</p>
 
         <form action="{{ path('eg_pupil_delete', {'id': pupil.id}) }}" method="post">
             <a href="{{ path('eg_class_view', {id: class.id}) }}" class="btn btn-default">

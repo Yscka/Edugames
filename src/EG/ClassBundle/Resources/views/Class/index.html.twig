@@ -1,12 +1,11 @@
 {% extends 'EGClassBundle::layout.html.twig' %}
 
-{% block title %}
-   Mes Classes - {{ parent() }}
-{% endblock %}
+{% block title %}{{ parent() }} - Administration des Classes{% endblock %}
+
 
 {% block egBody %}
     <div class="row">
-        <h2 class="text-center">Gestion des classes</h2>
+        <h2 class="text-center">Administration des classes</h2>
         <ul class="container-fluid bg-3 text-center-sm-3">
             {% for class in listClass %}
                 <div class="col-sm-3">

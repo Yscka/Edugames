@@ -1,12 +1,13 @@
 {% extends 'EGClassBundle::layout.html.twig' %}
 
-{% block title %}
-    Nouvelle Classe - {{ parent() }}
-{% endblock %}
+{% block title %}{{ parent() }} - Création d'un nouvel élève de la Classe {{ class.classroomName }}{% endblock %}
+
 
 {% block egBody %}
-    <h2 class="text-center">Ajout d'un éléve dans la classe  {{ class.classroomName }}</h2>
-    {{ form(form) }}
+    <h2 class="text-center">Création d'un nouvel élève dans la classe  {{ class.classroomName }}</h2>
 
+    <div class="container">
+        {{ form(form) }}
+    </div>
     <a href="{{ path('eg_class_view', {id: class.id}) }}" class="btn btn-default" ><span class="glyphicon glyphicon-chevron-left"></span> Retour</a></div>
 {% endblock %}

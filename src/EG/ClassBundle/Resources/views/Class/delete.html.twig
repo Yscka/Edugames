@@ -1,8 +1,7 @@
 {% extends 'EGClassBundle::layout.html.twig' %}
 
-{% block title %}
-    Suppression {{ class.classroomName }} - {{ parent() }}
-{% endblock %}
+{% block title %}{{ parent() }} - Suppression de la Classe {{ class.classroomName }}{% endblock %}
+
 
 {% block egBody %}
     <div class="well text-center">
@@ -13,9 +12,9 @@
                 <span class="glyphicon glyphicon-chevron-left"></span>
                 Annuler</a>
 
-            {# Ici j'ai écrit le bouton de soumission à la main #}
+
             <input type="submit" value="Supprimer" class="btn btn-danger" />
-            {# Ceci va générer le champ CSRF #}
+
             {{ form_rest(form) }}
         </form>
     </div>
