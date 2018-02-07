@@ -4,6 +4,7 @@ namespace EG\ClassBundle\Form;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -19,15 +20,15 @@ class PupilType extends AbstractType
             ->add('name', TextType::class)
             ->add('lastName', TextType::class)
             ->add('birthdate', DateType::class)
-            /*->add('classRoom', EntityType::class, array(
-                'class'        => 'EGClassBundle:ClassRoom',
-                'choice_label' => 'classroomName',
-                'choice_value' => 'id',*/
-                /*'attr' => array(
-                    'disabled' => 'disabled',
-                    ),*/
+            ->add('games', EntityType::class, array(
+                'class' => 'EGGameBundle:Games',
+                'choice_label' => 'nameGame',
+                'multiple' => true,
+                'expanded' => true,
+                'label' => 'Jeux',
+                'label_attr' => array('class' => 'checkbox-inline')
 
-
+            ))
             ->add('save', SubmitType::class, ['label' => 'Valider'])
         ;
     }

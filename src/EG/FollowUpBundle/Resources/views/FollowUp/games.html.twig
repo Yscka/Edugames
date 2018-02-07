@@ -4,7 +4,7 @@
         <h2 class="text-center">Jeux</h2>
 
         <ul class="container-fluid bg-3 text-center-sm-3">
-            {% for game in pupil.games %}
+            {% for game in listGames %}
                 <div class="col-sm-3">
                     <li class="list-unstyled">
                         <a class="link" href="{{ path('eg_follow_up_pupil_game_result', {'id' : pupil.id , 'game' : game.nameGame} ) }}">

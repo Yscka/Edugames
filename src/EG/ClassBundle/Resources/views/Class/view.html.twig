@@ -33,6 +33,7 @@
         </div>
     </div>
     <div class="text-center col col-lg-12">
+        <a href="{{ path('eg_pupil_add', {id: class.id}) }}" class="btn btn-primary">Ajouter un nouvel élève</a>
         <a href="{{ path('eg_class_edit', {id: class.id}) }}" class="btn btn-primary">Modifier le nom de classe</a>
         <a href="{{ path('eg_class_delete_all', {id: class.id}) }}" class="btn btn-danger">Supprimer tout les éléves <span class="glyphicon glyphicon-trash" ></span></a>
         <a href="{{ path('eg_class_delete', {id: class.id}) }}" class="btn btn-danger">Supprimer la classe <span class="glyphicon glyphicon-trash" ></span></a>
