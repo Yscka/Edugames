@@ -31,6 +31,9 @@ body {
 .navbar{
     background-color: #1B6E86;
 }
+.navbar-header{
+    height: 6vh;
+}
 .navbar-brand {
     color: whitesmoke !important;
     transform: translateX(-50%);
@@ -41,8 +44,8 @@ body {
     color: whitesmoke !important;
 }
 #logo{
-    height: 220%;
-    width: 220%;
+    height: 7vh;
+    width: 6vw;
 
 }
 /* login */
@@ -142,3 +145,4 @@ main{
 #cursive{
     font-family: "JBCursive";
 }
+
