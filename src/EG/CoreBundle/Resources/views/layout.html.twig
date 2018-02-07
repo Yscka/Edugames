@@ -32,6 +32,7 @@
                             <li><a href="{{ path("eg_follow_up_homepage") }}">Suivi des Classes</a></li>
                             {% if is_granted('ROLE_SUPER_ADMIN') %}
                             <li><a href="{{ path("eg_user_homepage") }}">Administration des enseignants</a></li>
+                            <li><a href="{{ path("eg_admin_game") }}">Administration des jeux</a></li>
                                {% endif %}
                             <li><a href="{{ path("eg_class_homepage") }}">Administration des Classes</a></li>
                             <li><a href="{{ path('eg_user_profile', {id: app.user.id }) }}">Mon profil</a></li>

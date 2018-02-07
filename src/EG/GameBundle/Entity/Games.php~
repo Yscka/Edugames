@@ -34,7 +34,10 @@ class Games
      */
     private $src;
 
-
+    /**
+     * @ORM\OneToOne(targetEntity="EG\GameBundle\Entity\Images", cascade ={"persist"})
+     */
+    private $images;
     /**
      * Get id.
      *

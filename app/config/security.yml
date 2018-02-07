@@ -32,6 +32,7 @@ security:
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/$, role: ROLE_ADMIN }
         - { path: /teacher/admin, role: ROLE_SUPER_ADMIN }
+        - { path: /games/admin, role: ROLE_SUPER_ADMIN }
 
 
             # activate different ways to authenticate

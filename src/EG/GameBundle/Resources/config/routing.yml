@@ -1,6 +1,25 @@
+eg_admin_game:
+    path: /admin
+    defaults:
+        _controller: EGGameBundle:Games:admin
+
+eg_admin_add_game:
+    path: /admin/add
+    defaults:
+        _controller: EGGameBundle:Games:add
+
+eg_admin_edit_game:
+    path: /admin/edit/{id}
+    defaults:
+        _controller: EGGameBundle:Games:edit
+    requirements:
+        id: \d+
+
 eg_game_homepage:
     path:     /{id}
     defaults: { _controller: EGGameBundle:Games:index }
+    requirements:
+        id: \d+
 
 eg_game_play:
     path: /play/{pupil}/{id}
@@ -8,3 +27,4 @@ eg_game_play:
         _controller: EGGameBundle:Games:play
     requirements:
         id: \d+
+

@@ -3,6 +3,7 @@
 namespace EG\GameBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use EG\GameBundle\Entity\Images;
 
 /**
  * Games
@@ -34,7 +35,10 @@ class Games
      */
     private $src;
 
-
+    /**
+     * @ORM\OneToOne(targetEntity="EG\GameBundle\Entity\Images", cascade ={"persist"})
+     */
+    private $images;
     /**
      * Get id.
      *
@@ -93,4 +97,28 @@ class Games
         return $this->src;
     }
 
+
+    /**
+     * Set images.
+     *
+     * @param Images|null $images
+     *
+     * @return Games
+     */
+    public function setImages(Images $images = null)
+    {
+        $this->images = $images;
+
+        return $this;
+    }
+
+    /**
+     * Get images.
+     *
+     * @return Images|null
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
 }
