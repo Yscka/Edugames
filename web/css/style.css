@@ -56,6 +56,11 @@ body {
 .link:hover{
     text-decoration: none;
 }
+
+#imgGame{
+    width: 20vw;
+    height: 20vh;
+}
 /* table */
 table, th{
     text-align: center;

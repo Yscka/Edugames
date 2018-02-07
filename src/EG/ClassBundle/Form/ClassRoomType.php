@@ -2,6 +2,7 @@
 
 namespace EG\ClassBundle\Form;
 
+use EG\GameBundle\Form\GamesType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;

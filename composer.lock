@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0a21ecc73a51714922f6ce28258a4df5",
+    "content-hash": "3b7222f44c81a59c49862118860b6e4f",
     "packages": [
         {
             "name": "components/jquery",
@@ -1063,12 +1063,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "9b3be01d5d03df2b20b5dd955adb72c0ebb3dc9c"
+                "reference": "f8be78ec6f47a403bd14026a26b6b1879d81d020"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/9b3be01d5d03df2b20b5dd955adb72c0ebb3dc9c",
-                "reference": "9b3be01d5d03df2b20b5dd955adb72c0ebb3dc9c",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/f8be78ec6f47a403bd14026a26b6b1879d81d020",
+                "reference": "f8be78ec6f47a403bd14026a26b6b1879d81d020",
                 "shasum": ""
             },
             "require": {
@@ -1131,7 +1131,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2018-01-25T09:29:07+00:00"
+            "time": "2018-02-06T13:20:29+00:00"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -2892,7 +2892,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.5.9"
+        "php": ">=7.1"
     },
     "platform-dev": []
 }

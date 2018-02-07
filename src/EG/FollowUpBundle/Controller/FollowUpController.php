@@ -59,9 +59,9 @@ class FollowUpController extends Controller
              throw new NotFoundHttpException('L\'élève n\'existe pas');
         }
 
-       // $listGames = $pupil->getGames();
+       $listGames = $em->getRepository('EGGameBundle:Games')->findAll();
         return $this->render('EGFollowUpBundle:FollowUp:games.html.twig', array (
-            //'listGames' => $listGames,
+            'listGames' => $listGames,
             'pupil' => $pupil
         ));
     }

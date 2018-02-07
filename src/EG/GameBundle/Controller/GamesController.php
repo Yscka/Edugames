@@ -4,6 +4,7 @@ namespace EG\GameBundle\Controller;
 
 use EG\GameBundle\Entity\GameResult;
 use EG\GameBundle\Entity\Games;
+use EG\GameBundle\Form\GamesType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,10 +16,11 @@ class GamesController extends Controller
         $em = $this->getDoctrine()->getManager();
         $pupil = $em->getRepository('EGClassBundle:Pupil')->find($id);
         $listGames = $em->getRepository('EGGameBundle:Games')->findAll();
-
+        $games = $pupil->getGames();
         return $this->render("EGGameBundle:Games:index.html.twig", array(
             'pupil' => $pupil,
-            'listGames' => $listGames
+            'listGames' => $listGames,
+            'games' => $games
         ));
     }
 
@@ -46,6 +48,54 @@ class GamesController extends Controller
         return $this->render("EGGameBundle:Games:play.html.twig", array(
             'game' => $game,
             'pupil' => $pupil
+        ));
+    }
+
+    public function adminAction(){
+        $em = $this->getDoctrine()->getManager();
+        $games = $em->getRepository('EGGameBundle:Games')->findAll();
+
+        return $this->render('EGGameBundle:Admin:index.html.twig', array(
+            'games' => $games
+        ));
+    }
+    public function addAction(Request $request){
+        $game = new Games();
+        $form   = $this->get('form.factory')->create(GamesType::class, $game);
+
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($game);
+            $em->flush();
+
+            $request->getSession()->getFlashBag()->add('sucess', 'Jeu bien enregistrée.');
+
+            return $this->redirectToRoute('eg_admin_game');
+        }
+
+        return $this->render('EGGameBundle:Admin:add.html.twig', array(
+            'form' => $form->createView(),
+        ));
+    }
+    public function editAction($id, Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $game = $em->getRepository('EGGameBundle:Games')->find($id);
+
+        if (null === $game) {
+            throw new NotFoundHttpException("Le jeu n'existe pas.");
+        }
+
+        $form   = $this->get('form.factory')->create(GamesType::class, $game);
+
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+            $em->flush();
+            $request->getSession()->getFlashBag()->add('success', 'Jeu modifié avec succés.');
+            return $this->redirectToRoute('eg_admin_game');
+        }
+
+        return $this->render('EGGameBundle:Admin:edit.html.twig', array(
+            'form' => $form->createView(),
+            'game' => $game
         ));
     }
 }
