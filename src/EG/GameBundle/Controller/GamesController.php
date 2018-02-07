@@ -16,10 +16,11 @@ class GamesController extends Controller
         $em = $this->getDoctrine()->getManager();
         $pupil = $em->getRepository('EGClassBundle:Pupil')->find($id);
         $listGames = $em->getRepository('EGGameBundle:Games')->findAll();
-
+        $games = $pupil->getGames();
         return $this->render("EGGameBundle:Games:index.html.twig", array(
             'pupil' => $pupil,
-            'listGames' => $listGames
+            'listGames' => $listGames,
+            'games' => $games
         ));
     }
 
@@ -64,7 +65,6 @@ class GamesController extends Controller
 
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $game->getImages()->upload();
             $em->persist($game);
             $em->flush();
 
@@ -88,8 +88,6 @@ class GamesController extends Controller
         $form   = $this->get('form.factory')->create(GamesType::class, $game);
 
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
-            $game->getImages()->upload();
-
             $em->flush();
             $request->getSession()->getFlashBag()->add('success', 'Jeu modifié avec succés.');
             return $this->redirectToRoute('eg_admin_game');

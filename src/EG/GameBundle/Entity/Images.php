@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
  *
  * @ORM\Table(name="images")
  * @ORM\Entity(repositoryClass="EG\GameBundle\Repository\ImagesRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class Images
 {
