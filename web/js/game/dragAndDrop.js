@@ -5,7 +5,7 @@ var start = new PIXI.Container();
 var loading = new PIXI.Container();
 var stage = new PIXI.Container();
 var end = new PIXI.Container();
-var url= '//localhost/Edugames/web/js/game/img/';
+var url= '//localhost:8888/Edugames/web/js/game/img/';
 
 var loader;
 

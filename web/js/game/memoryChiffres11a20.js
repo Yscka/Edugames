@@ -3,7 +3,7 @@ renderer.backgroundColor = 0x888888;
 var stage = new PIXI.Container();
 var end = new PIXI.Container();
 var start = new PIXI.Container();
-var url= '//localhost/Edugames/web/js/game/img/';
+var url= '//localhost:8888/Edugames/web/js/game/img/';
 document.body.appendChild(renderer.view);
 setup();
 function setup() {
