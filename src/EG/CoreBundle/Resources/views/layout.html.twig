@@ -20,7 +20,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
        <div class="container-fluid">
             <div class="navbar-header">
-                 <a class="navbar-brand center-block" href="{{ path("eg_core_homepage") }}">Edugames</a>
+                 <a class="navbar-brand center-block" href="{{ path("eg_core_homepage") }}"><img src="{{ asset('css/img/logoEG2.png') }}" alt="Edugames" id="logo"/></a>
             </div>
            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 <ul class="nav navbar-nav navbar-left">

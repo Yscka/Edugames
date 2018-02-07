@@ -2,12 +2,30 @@ html{
     position: relative;
     min-height: 100%;
 }
+@font-face {
+    font-family: 'JBCursive', serif;
+    src: url("/web/fonts/JBCursive.otf");
+
+}
+@font-face {
+    font-family: 'Brandon Grotesque', serif;
+    src: url("/web/fonts/Brandon_thin.otf");
+}
+@font-face {
+    font-family: 'Sukhumvit Set', serif;
+    src: url("/web/fonts/SukhumvitSet.ttc");
+}
 body {
     padding-top: 60px;
+    font-family: "Sukhumvit Set";
+    background-color: #EAEAEA;
+
 }
+
+
 /* Header */
 .navbar{
-    background-color: #1b6d85;
+    background-color: #1B6E86;
 }
 .navbar-brand {
     color: whitesmoke !important;
@@ -18,13 +36,18 @@ body {
 .navbar-nav > li > a {
     color: whitesmoke !important;
 }
+#logo{
+    height: 250%;
+    width: 250%;
+
+}
 /* login */
 .vertical-offset-100{
     padding-top:100px;
 }
 /* block div */
 .panel{
-    background-color: #dff0d8;
+    background-color: white;
 }
 .link:hover{
     text-decoration: none;
@@ -95,4 +118,11 @@ main{
         left: 50%;
         position: absolute;
     }
+}
+
+.list-unstyled{
+    border: solid grey;
+    -moz-border-radius:10px 0;
+    -webkit-border-radius:10px 0;
+    border-radius:10px 10px;
 }

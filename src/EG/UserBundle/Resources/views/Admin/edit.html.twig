@@ -3,7 +3,22 @@
 {% block egBody %}
     <div class="container">
         <div class="row">
-            {{ form(form) }}
+            {{ form_start(form) }}
+            {{ form_errors(form) }}
+
+            {{ form_label(form.lastname) }}
+            {{ form_errors(form.lastname) }}
+            {{ form_widget(form.lastname) }}
+
+            {{ form_label(form.name) }}
+            {{ form_errors(form.name) }}
+            {{ form_widget(form.name) }}
+
+
+
+
+            {{ form_end(form) }}
         </div>
     </div>
+
 {% endblock %}

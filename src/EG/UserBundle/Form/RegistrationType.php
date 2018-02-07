@@ -2,6 +2,7 @@
 
 namespace EG\UserBundle\Form;
 
+use EG\ClassBundle\EGClassBundle;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -37,8 +38,11 @@ class RegistrationType extends AbstractType
                 'label' => 'Rôle',
                 'label_attr' => array('class' => 'checkbox-inline')
             ))
-            ->add('name')
-            ->add('lastname')
+            ->add('name', \Symfony\Component\Form\Extension\Core\Type\TextType::class, array(
+                'label'=>'Prénom'
+            ))
+            ->add('lastname', \Symfony\Component\Form\Extension\Core\Type\TextType::class, array(
+                'label'=>'Nom'))
             ->add('classroom', EntityType::class, array(
                 'class' => 'EGClassBundle:ClassRoom',
                 'choice_label' => 'classroomName',
