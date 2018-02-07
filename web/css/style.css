@@ -4,20 +4,20 @@ html{
 }
 @font-face {
     font-family: 'JBCursive', serif;
-    src: url("/web/fonts/JBCursive.otf");
+    src: url("../fonts/JBCursive.otf");
 
 }
 @font-face {
     font-family: 'Brandon Grotesque', serif;
-    src: url("/web/fonts/Brandon_thin.otf");
+    src: url("../fonts/Brandon_thin.otf");
 }
 @font-face {
     font-family: 'Brandon Grotesque It', serif;
-    src: url("/web/fonts/Brandon_thin_it.otf");
+    src: url("../fonts/Brandon_thin_it.otf");
 }
 @font-face {
     font-family: 'Sukhumvit Set', serif;
-    src: url("/web/fonts/SukhumvitSet.ttc");
+    src: url("../fonts/SukhumvitSet.ttc");
 }
 body {
     padding-top: 60px;
@@ -53,6 +53,13 @@ body {
     padding-top:100px;
 }
 /* block div */
+.text-muted{
+    font-family: "Brandon Grotesque";
+    font-weight: lighter;
+}
+#cursive{
+    font-family: "JBCursive";
+}
 .panel{
     background-color: white;
 }
@@ -138,11 +145,5 @@ main{
     -webkit-border-radius:10px 0;
     border-radius:10px 10px;
 }
-.text-muted{
-    font-family: "Brandon Grotesque";
-    font-weight: lighter;
-}
-#cursive{
-    font-family: "JBCursive";
-}
+
 
