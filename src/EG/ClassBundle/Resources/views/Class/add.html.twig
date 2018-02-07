@@ -1,11 +1,9 @@
 {% extends 'EGClassBundle::layout.html.twig' %}
 
-{% block title %}
-    Nouvelle Classe - {{ parent() }}
-{% endblock %}
+{% block title %}{{ parent() }} - Création d'une nouvelle classe{% endblock %}
 
 {% block egBody %}
-
+    <h2>Création d'une nouvelle classe</h2>
     {{ include("EGClassBundle:Class:formClass.html.twig") }}
 
     <a href="{{ path('eg_class_homepage') }}" class="btn btn-default">Retour</a></div>

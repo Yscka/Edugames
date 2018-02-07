@@ -1,20 +1,18 @@
 <div class="well">
     {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
 
-    {# Les erreurs générales du formulaire. #}
+
     {{ form_errors(form) }}
 
-    {# Génération du label + error + widget pour un champ. #}
-    {# Génération manuelle et éclatée : #}
+
     <div class="form-group">
-        {# Génération du label. #}
+
         {{ form_label(form.classroomName, "Nom de la classe", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
 
-        {# Affichage des erreurs pour ce champ précis. #}
+
         {{ form_errors(form.classroomName) }}
 
         <div class="col-sm-10">
-            {# Génération de l'input. #}
             {{ form_widget(form.classroomName, {'attr': {'class': 'form-control'}}) }}
         </div>
     </div>

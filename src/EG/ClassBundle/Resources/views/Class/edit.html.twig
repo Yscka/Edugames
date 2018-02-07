@@ -1,11 +1,10 @@
 {% extends 'EGClassBundle::layout.html.twig' %}
 
-{% block title %}
-    Edition {{ class.classroomName }} - {{ parent() }}
-{% endblock %}
+{% block title %}{{ parent() }} - Modification du nom de classe{% endblock %}
+
 
 {% block egBody %}
-
+    <h2>Modification du nom de classe</h2>
     {{ include("EGClassBundle:Class:formClass.html.twig") }}
 
     <a href="{{ path('eg_class_view', {id: class.id}) }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span> Retour</a></div>

@@ -35,7 +35,7 @@ class UserController extends Controller
             $request->getSession()->getFlashBag()->add('Info', 'Enseignant modifié.');
             return $this->redirectToRoute('eg_user_homepage');
         }
-        return $this->render('EGUserBundle:Admin:edit.html.twig', array(
+        return $this->render('EGUserBundle:Admin:add.html.twig', array(
             'form' => $form->createView()
         ));
     }

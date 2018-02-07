@@ -1,21 +1,20 @@
 {% extends 'EGClassBundle::layout.html.twig' %}
 
-{% block title %}
-    Suppression {{ class.classroomName }} - {{ parent() }}
-{% endblock %}
+{% block title %}{{ parent() }} - Suppression des élèves de la Classe {{ class.classroomName }}{% endblock %}
+
 
 {% block egBody %}
     <div class="well text-center">
-        <p>Êtes-vous sur de vouloir supprimer tout les éleves de la classe {{ class.classroomName }}</p>
+        <p>Êtes-vous sur de vouloir supprimer tout les élèves de la classe {{ class.classroomName }}</p>
 
         <form action="{{ path('eg_class_delete_all', {id: class.id}) }}" method="post">
             <a href="{{ path('eg_class_view', {id: class.id}) }}" class="btn btn-default">
                 <span class="glyphicon glyphicon-chevron-left"></span>
                 Annuler</a>
 
-            {# Ici j'ai écrit le bouton de soumission à la main #}
+
             <input type="submit" value="Supprimer" class="btn btn-danger" />
-            {# Ceci va générer le champ CSRF #}
+
             {{ form_rest(form) }}
         </form>
     </div>

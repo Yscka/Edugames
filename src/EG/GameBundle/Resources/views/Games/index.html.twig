@@ -1,7 +1,9 @@
 {% extends 'EGGameBundle::layout.html.twig' %}
+{% block title %}{{ parent() }} - Liste des jeux de {{ pupil.name }} {{ pupil.lastName }}{% endblock %}
+
 {% block egBody %}
 <div class="row">
-    <h2 class="text-center">Jeux</h2>
+    <h2 class="text-center">Liste des jeux de {{ pupil.name }} {{ pupil.lastName }}</h2>
 
     <ul class="container-fluid bg-3 text-center-sm-3">
         {% for game in pupil.games %}

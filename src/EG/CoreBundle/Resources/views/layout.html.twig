@@ -28,13 +28,13 @@
                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class=" glyphicon glyphicon-menu-hamburger"></span> </a>
                         {#<a class="dropdown-toggle" data-toggle="dropdown" href="#"> Profil <span class="caret"> </span></a>#}
                         <ul class="dropdown-menu">
-                            <li><a href="{{ path("eg_core_homepage") }}">Accueil</a></li>
-                            {% if is_granted('ROLE_SUPER_ADMIN') %}
-                            <li><a href="{{ path("eg_user_homepage") }}">Gestion des enseignants</a></li>
-                               {% endif %}
-                            <li><a href="{{ path("eg_class_homepage") }}">Gestion des Classes</a></li>
+                            <li><a href="{{ path("eg_core_homepage") }}">Mes classes</a></li>
                             <li><a href="{{ path("eg_follow_up_homepage") }}">Suivi des Classes</a></li>
-                            <li><a href="{{ path('eg_user_profile', {id: app.user.id }) }}">Profil</a></li>
+                            {% if is_granted('ROLE_SUPER_ADMIN') %}
+                            <li><a href="{{ path("eg_user_homepage") }}">Administration des enseignants</a></li>
+                               {% endif %}
+                            <li><a href="{{ path("eg_class_homepage") }}">Administration des Classes</a></li>
+                            <li><a href="{{ path('eg_user_profile', {id: app.user.id }) }}">Mon profil</a></li>
                             <li><a href="{{ path("fos_user_security_logout") }}">Déconnexion </a></li>
                         </ul>
                     </li>
@@ -52,7 +52,6 @@
         {% for message in messages %}
             <div class="alert alert-{{ key }}">
                 {{ message }}
-               {# {{ message|trans({}, 'FOSUserBundle') }}#}
             </div>
         {% endfor %}
     {% endfor %}

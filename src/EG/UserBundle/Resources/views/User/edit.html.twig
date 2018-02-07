@@ -1,7 +1,10 @@
 {% extends 'EGUserBundle::layout.html.twig' %}
 
+{% block title %}{{ parent() }} - Editer mon profil {% endblock %}
+
 {% block egBody %}
     <div class="container">
+        <h2 class="text-center">Editer mon profil</h2>
         {{ form(form) }}
         <a href="{{ path('eg_user_profile_change_password', {id: user.id}) }}" class="btn btn-primary">Modifier le mot de passe</a>
         <a href="{{ path('eg_user_profile', {id: user.id}) }}" class="btn btn-default "><span class="glyphicon glyphicon-chevron-left"></span> Retour</a></p>
