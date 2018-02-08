@@ -1,6 +1,7 @@
 <div class="row">
     <h2 class="text-center">Mes Classes</h2>
 
+<<<<<<< Updated upstream
     <div class="col-sm-10 col-sm-offset-1">
             <ul class="container-fluid bg-3 text-center-sm-3">
                 {% for class in listClass %}
@@ -16,4 +17,19 @@
                 {% endfor %}
             </ul>
     </div>
+=======
+    <ul class="container-fluid bg-3 text-center-sm-3">
+        {% for class in listClass %}
+            <div class="col-md-2">
+                <li class="list-unstyled">
+                    <a class="link" href="{{ path('eg_view_class_view', {'id' : class.id }) }}">
+                        <div class="panel panel-title well-lg">
+                            <p>{{ class.classroomName }}</p>
+                        </div>
+                    </a>
+                </li>
+            </div>
+        {% endfor %}
+    </ul>
+>>>>>>> Stashed changes
 </div>
