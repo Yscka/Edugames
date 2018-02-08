@@ -3,31 +3,38 @@
 
 
 {% block egBody %}
-    <div class="row">
         <h2 class="text-center">Gestion des Enseignants</h2>
-        <ul class="container-fluid bg-3 text-center-sm-3">
-            {% for user in listUser %}
-                <div class="col-sm-3">
-                    <div class="panel panel-title well">
-                        <li class="list-unstyled">
-                            <p>{{ user.username }}
-                                {{ user.name }}</p>
-                            <p>{% for class in user.classroom %}
-                            {{ class.classroomName }}{% if not loop.last %}, {% endif %}
-                            {% endfor %}</p>
-                            <a href="{{ path('eg_user_edit', {id: user.id}) }}" class="btn btn-primary">Editer l'enseignant</a>
-                            <a href="{{ path('eg_user_delete', {id: user.id }) }}" class="btn btn-danger">Supprimer l'enseignant <span class="glyphicon glyphicon-trash" ></span></a>
-                        </li>
-                    </div>
-                </div>
-            {% endfor %}
-            <div class="col-sm-3">
-                <div class="panel panel-title well">
-                    <li class="list-unstyled">
-                        <a href="{{ path('eg_user_add') }}" class="btn btn-success">Ajouter un enseignant <span class="glyphicon glyphicon-plus" ></span></a>
-                    </li>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Nom d'utilisateur</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for user in listUser %}
+                        <tr>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.lastname }}</td>
+                            <td>{{ user.name }}</td>
+
+                            <td><a href="{{ path('eg_user_edit', {id: user.id}) }}" class="btn btn-primary">Editer l'enseignant</a></td>
+                            <td> <a href="{{ path('eg_user_delete', {id: user.id }) }}" class="btn btn-danger">Supprimer l'enseignant <span class="glyphicon glyphicon-trash"></span></a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+
+                </table>
             </div>
-        </ul>
+        </div>
+        <div class="text-center col col-lg-12">
+            <a href="{{ path('eg_user_add') }}" class="btn btn-success">Ajouter un enseignant <span class="glyphicon glyphicon-plus" ></span></a>
+            <a href="{{ path('eg_class_homepage') }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span> Retour</a></div>
     </div>
 {% endblock %}

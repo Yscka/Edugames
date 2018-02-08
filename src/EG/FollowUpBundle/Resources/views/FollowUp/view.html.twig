@@ -3,20 +3,22 @@
 {%  block egBody %}
     <div class="row">
         <h2 class="text-center">suivi des élèves de la classe {{ class.classroomName }}</h2>
-        <ul class="container-fluid bg-3 text-center-sm-3">
-            {% for pupil in listPupil %}
-                <div class="col-sm-3">
-                    <li class="list-unstyled">
-                        <a class="link" href="{{ path('eg_follow_up_view_pupil', {id: pupil.id}) }}">
-                            <div class="panel panel-title well-lg">
-                                <p>
-                                    {{ pupil.name }}
-                                </p>
-                            </div>
-                        </a>
-                    </li>
-                </div>
-            {%  endfor %}
-        </ul>
+            <div class="col-sm-10 col-sm-offset-1">
+                <ul class="container-fluid bg-3 text-center-sm-3">
+                    {% for pupil in listPupil %}
+                        <div class="col-md-2">
+                            <li class="list-unstyled">
+                                <a class="link" href="{{ path('eg_follow_up_view_pupil', {id: pupil.id}) }}">
+                                    <div class="panel panel-title well-lg">
+                                        <p>
+                                            {{ pupil.name }}
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                        </div>
+                    {%  endfor %}
+                </ul>
+            </div>
     </div>
 {% endblock %}

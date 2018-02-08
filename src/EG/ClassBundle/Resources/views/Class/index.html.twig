@@ -6,31 +6,33 @@
 {% block egBody %}
     <div class="row">
         <h2 class="text-center">Administration des classes</h2>
-        <ul class="container-fluid bg-3 text-center-sm-3">
-            {% for class in listClass %}
-                <div class="col-sm-3">
-                    <li class="list-unstyled">
-                        <a class="link" href="{{ path('eg_class_view', {id : class.id}) }}">
-                            <div class="panel panel-title well-lg">
-                                <p>
-                                    {{ class.classroomName }}
-                                </p>
-                            </div>
-                        </a>
-                    </li>
-                </div>
-            {% endfor %}
-            <div class="col-sm-3">
-                <li class="list-unstyled">
-                    <a class="link" href="{{ path('eg_class_add') }}">
-                        <div class="panel panel-title well-lg">
-                            <p>Nouvelle classe
-                                <span class="glyphicon glyphicon-plus" ></span>
+            <div class="col-sm-10 col-sm-offset-1">
+                <ul class="container-fluid bg-3 text-center-sm-3">
+                    {% for class in listClass %}
+                        <div class="col-md-2">
+                            <li class="list-unstyled">
+                                <a class="link" href="{{ path('eg_class_view', {id : class.id}) }}">
+                                    <div class="panel panel-title well-lg">
+                                        <p>
+                                            {{ class.classroomName }}
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
                         </div>
-                    </a>
-                </li>
+                    {% endfor %}
+                    <div class="col-md-2">
+                        <li class="list-unstyled">
+                            <a class="link" href="{{ path('eg_class_add') }}">
+                                <div class="panel panel-title well-lg">
+                                    <p>Nouvelle classe
+                                        <span class="glyphicon glyphicon-plus" ></span>
+                                </div>
+                            </a>
+                        </li>
+                    </div>
+                </ul>
             </div>
-        </ul>
     </div>
 {% endblock %}
 

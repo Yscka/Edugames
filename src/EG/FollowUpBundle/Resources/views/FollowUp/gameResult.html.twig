@@ -1,40 +1,42 @@
 {% extends 'EGFollowUpBundle::layout.html.twig' %}
 {% block egBody %}
     <h2 class="text-center">Suivi de {{ pupil.name }} pour le jeu {{ game.nameGame }}</h2>
-    <div class="table-responsive">
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th>Progression</th>
-                <th>Date</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for result in listResult %}
-                {% if result.complete < 25 %}
-                    <tr class="low">
-                        <td>{{ result.complete }} %</td>
-                        <td>{{ result.date|date('d/m/Y') }}</td>
-                    </tr>
-                {% elseif result.complete < 50 %}
-                    <tr class="mid-low">
-                        <td>{{ result.complete }} %</td>
-                        <td>{{ result.date|date('d/m/Y') }}</td>
-                    </tr>
-                {% elseif result.complete < 75 %}
-                    <tr class="mid-high">
-                        <td>{{ result.complete }} %</td>
-                        <td>{{ result.date|date('d/m/Y') }}</td>
-                    </tr>
-                {% else %}
-                    <tr class="high">
-                        <td>{{ result.complete }} %</td>
-                        <td>{{ result.date|date('d/m/Y') }}</td>
-                    </tr>
-                {% endif %}
-            {% endfor %}
-            </tbody>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Progression</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for result in listResult %}
+                    {% if result.complete < 25 %}
+                        <tr class="low">
+                            <td>{{ result.complete }} %</td>
+                            <td>{{ result.date|date('d/m/Y') }}</td>
+                        </tr>
+                    {% elseif result.complete < 50 %}
+                        <tr class="mid-low">
+                            <td>{{ result.complete }} %</td>
+                            <td>{{ result.date|date('d/m/Y') }}</td>
+                        </tr>
+                    {% elseif result.complete < 75 %}
+                        <tr class="mid-high">
+                            <td>{{ result.complete }} %</td>
+                            <td>{{ result.date|date('d/m/Y') }}</td>
+                        </tr>
+                    {% else %}
+                        <tr class="high">
+                            <td>{{ result.complete }} %</td>
+                            <td>{{ result.date|date('d/m/Y') }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
 
-        </table>
+            </table>
+        </div>
     </div>
 {% endblock %}

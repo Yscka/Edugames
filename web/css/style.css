@@ -40,9 +40,18 @@ body {
     left: 50%;
     position: absolute;
 }
+#menu {
+    background-color: transparent;
+}
+
+#menu:hover,focus{
+    background-color: transparent;
+}
+
 .navbar-nav > li > a {
     color: whitesmoke !important;
 }
+
 #logo{
     height: 7vh;
     width: 6vw;
@@ -132,6 +141,14 @@ main{
     border-radius:10px 10px;
 }
 
+.col-md-2{
+    margin-top: 5px;
+    padding-bottom: 5px;
+}
+.col-sm-3{
+    margin-top: 5px;
+    padding-bottom: 5px;
+}
 
 @media (max-width: 815px) {
     html{
