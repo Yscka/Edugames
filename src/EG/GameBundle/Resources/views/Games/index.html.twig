@@ -7,8 +7,8 @@
 
     <ul class="container-fluid bg-3 text-center-sm-3">
         {% for game in pupil.games %}
-            <div class="col-sm-3">
-                <li class="list-unstyled">
+            <div class="col-sm-3" >
+                <li class="list-unstyled" id="gameView">
                     <a class="link" href="{{ path('eg_game_play', {pupil: pupil.name, id: game.id} ) }}">
                         <div>
                             <img id="imgGame" src="{{ asset(game.images.webPath) }}" alt="{{ game.images.alt }}"/>

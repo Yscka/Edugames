@@ -66,10 +66,18 @@ body {
 .link:hover{
     text-decoration: none;
 }
-
+#gameView{
+    border-style: none  ;
+}
 #imgGame{
+    border: solid  3px #1b6d85;
     width: 20vw;
     height: 20vh;
+}
+
+#imgGame:hover{
+    width: 25vw;
+    height: 25vh;
 }
 /* table */
 table, th{
@@ -117,6 +125,13 @@ main{
 .container .text-muted {
     margin: 20px 0;
 }
+.list-unstyled{
+    border: solid grey;
+    -moz-border-radius:10px 0;
+    -webkit-border-radius:10px 0;
+    border-radius:10px 10px;
+}
+
 
 @media (max-width: 815px) {
     html{
@@ -139,11 +154,6 @@ main{
     }
 }
 
-.list-unstyled{
-    border: solid grey;
-    -moz-border-radius:10px 0;
-    -webkit-border-radius:10px 0;
-    border-radius:10px 10px;
-}
+
 
 
