@@ -1,43 +1,38 @@
 {% trans_default_domain 'FOSUserBundle' %}
-<div class="container">
-    {% if error %}
-        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
-    <div class="modal-content">
-        <div class="modal-header">
-            <h4 class="modal-title" id="myModalLabel">Log in</h4>
-        </div>
-
-        <div class="modal-body">
-            <form action="{{ path("fos_user_security_check") }}" method="post">
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 p-t-190 p-b-30">
+            {% if error %}
+                <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+            <form action="{{ path("fos_user_security_check") }}" method="post" class="login100-form validate-form">
+                <span class="login100-form-title p-t-20 p-b-45">
+                    Connexion
+                </span>
                 {% if csrf_token %}
                     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
                 {% endif %}
-                <div class="form-group">
-                    <div class="input-group">
-                        <input type="text" id="username" class="form-control" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
-                        <label for="username" class="input-group-addon glyphicon glyphicon-user"></label>
-
-                    </div>
+                <div class="wrap-input100 validate-input m-b-10" data-validate ="Username is required">
+                    <input type="text" id="username"  name="_username" value="{{ last_username }}" required="required" placeholder="username" class="input100" />
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-user"></i>
+                    </span>
                 </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <input type="password" id="password" class="form-control" name="_password" required="required" autocomplete="current-password" />
-                        <label for="password" class="input-group-addon glyphicon glyphicon-lock"></label>
-
-                    </div>
+                <div class="wrap-input100 validate-input m-b-10" data-validate ="Password is required">
+                    <input type="password" id="password" class="input100" name="_password" required="required" placeholder="password"/>
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-lock"></i>
+                    </span>
                 </div>
-                <div class="checkbox">
-                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-                    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
-                </div>
-
-                <div class="modal-footer">
-                    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}"  class="form-control btn btn-primary">
+                <div class="container-login100-form-btn p-t-25 p-b-230">
+                    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}"  class="login100-form-btn">
                 </div>
             </form>
         </div>
     </div>
+
 </div>
 
 
