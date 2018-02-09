@@ -52,8 +52,8 @@ body {
 }
 
 #logo{
+    width: 8vw;
     height: 7vh;
-    width: 6vw;
 
 }
 /* login */
@@ -150,7 +150,12 @@ main{
     padding-bottom: 5px;
 }
 
-@media (max-width: 815px) {
+@media (max-width: 990px){
+    #logo{
+        width: 12vw;
+    }
+}
+@media (max-width: 769px) {
     html{
         position: relative;
         min-height: 100%;
@@ -159,6 +164,14 @@ main{
         padding-top: 60px;
         margin-left: 5px;
         margin-right: 5px;
+    }
+    #header-responsive{
+        display: flex;
+        margin-left: 5vw;
+    }
+
+    #logo{
+        width: 15vw;
     }
 
     canvas
